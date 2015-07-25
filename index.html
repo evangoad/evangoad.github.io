@@ -4,3 +4,13 @@ title: Evan Goad Codes!
 ---
 <img src="https://cdn.rawgit.com/evangoad/evangoad.github.io/master/images/me.png" width=300 />
 <h1>Evan Goad Codes</h1>
+
+{% for member in site.data.contact_links %}
+<span class="link-container">
+   <a href="{{ member.url }}">
+     <i class="fa {{ member.icon }} fa-5x"></i>
+   </a>
+   <p class="link-description">{{ member.description }}</p>
+</span>
+{% endfor %}
+
