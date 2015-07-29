@@ -1,0 +1,10 @@
+<div class="contact-links">
+  {% for member in site.data.contact_links %}
+    <span class="link-container">
+      <a href="{{ member.url }}">
+        <i class="fa {{ member.icon }} fa-5x"></i>
+      </a>
+      <p class="link-description">{{ member.description }}</p>
+    </span>
+  {% endfor %}
+</div>

@@ -1,0 +1,48 @@
+$max-width:  45em;
+$padding: 16px;
+$mobile: new-breakpoint(max-width $max-width 4); 
+
+body {
+  font: 400 1em Lato, 'Helvetica Neue', Helvetica, Arial, sans-serif;
+  text-align: left;
+  background-color: $layout-white;
+  color: $layout-black; 
+  margin: 0;
+  @include media($mobile){
+    text-align: center;
+  }
+ }
+
+h1 {
+  margin: .5em auto;
+}
+
+#main{
+  @include outer-container;
+  max-width: $max-width;
+}
+
+#markdown-container{
+  @include span-columns(12);
+  padding: 1em;
+}
+
+.profile-picture {
+  @include span-columns(4);
+  @include media($mobile) {
+    @include span-columns(4);
+  }
+  img {
+    padding: 1em;
+    width: 15em;
+  }
+}
+
+.about-me {
+  @include span-columns(8);
+  @include omega();
+  @include media($mobile) {
+    @include span-columns(4);
+  }
+}
+

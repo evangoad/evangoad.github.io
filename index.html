@@ -1,16 +1,9 @@
 ---
 layout: default
-title: Evan Goad Codes!
+title: Evan Goad
 ---
-<img src="https://cdn.rawgit.com/evangoad/evangoad.github.io/master/images/me.png" width=300 />
-<h1>Evan Goad Codes</h1>
-
-{% for member in site.data.contact_links %}
-<span class="link-container">
-   <a href="{{ member.url }}">
-     <i class="fa {{ member.icon }} fa-5x"></i>
-   </a>
-   <p class="link-description">{{ member.description }}</p>
-</span>
-{% endfor %}
-
+{% include profile_picture.html %}
+<div class="about-me">
+  <h1>About Me</h1> 
+  <p>I'm a full stack developer for the web, and I love developing softwaring.  My specialty is memory effieciency and database query optimization for Ruby on Rails applications. For more information about my technical skills, please see my full <a href="/resume">resume</a>.</p>
+</div>
