@@ -8,14 +8,7 @@ body {
   background-color: $layout-white;
   color: $layout-black; 
   margin: 0;
-  @include media($mobile){
-    text-align: center;
-  }
  }
-
-h1 {
-  margin: .5em auto;
-}
 
 #main{
   @include outer-container;
@@ -31,6 +24,7 @@ h1 {
   @include span-columns(4);
   @include media($mobile) {
     @include span-columns(4);
+    @include media($mobile) { text-align: center; }
   }
   img {
     padding: 1em;
@@ -43,6 +37,8 @@ h1 {
   @include omega();
   @include media($mobile) {
     @include span-columns(4);
+    @include media($mobile) { text-align: center; }
+    padding: 1em;
   }
 }
 
