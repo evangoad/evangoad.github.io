@@ -1,0 +1,40 @@
+header {
+  $height: 72px;
+  @include span-columns(12);
+  @include media($mobile) { @include span-columns(4 of 4); }
+  border-bottom: 1px solid $layout-black;
+  .home {
+    height: $height;
+    @include span-columns(6 of 12);
+    @include media($mobile) { @include span-columns(4 of 4); }
+    a {
+      text-decoration: none;
+      color: $layout-black;
+      h1 {
+        padding-left: .5em;
+        margin: 16px 16px 16px auto;
+      }
+    }
+  }
+  nav {
+    height: $height;
+    @include span-columns(6 of 12);
+    padding: 1em .5em 1em 0; 
+    text-align: center;
+    @include direction-context(right-to-left) {
+      a {
+        @include span-columns(2 of 6);
+        @include pad();
+        vertical-align: bottom;
+        height: 100%;
+        @include media($mobile) { @include span-columns(2 of 4); }
+      }
+    }
+    @include media($mobile) { 
+      @include span-columns(4 of 4);
+      padding: 0 .5em 0 0;
+    }
+    @media print{ display: none; }
+  }
+}
+

@@ -1,0 +1,71 @@
+---
+layout: markdown
+title: Evan Goad Codes!
+---
+
+# Summary 
+
+Whether I am on a team or hacking on one of my personal projects, I love developing software. Connecting people through web tech has become a passion of mine, and I am looking for a company to help grow my passion! My specialty is memory and database query optimization for Rails, but I am ready to take on any web stack.
+
+# Technical Skills 
+
+- Programming Languages: Ruby, Javascript, C++, Java, Scala
+- Frameworks: Rails, Sinatra, Jekyll
+- Databases: PostgreSQL, MySQL
+- Web: HTML5, CSS3
+- Operating systems: Windows, OSX, Ubuntu, Archlinux
+- Text Editors: vim, SublimeText, notepad
+
+# Work Experience
+
+## Software Engineer at Procore Technologies
+
+June 2012 – June 2015
+
+- Rails and postgresql optimization, including memory efficiency and index optimization of queries
+- On call during downtime, helped mitigate several production emergencies
+- Lead developer on server side markup, and custom report projects
+- Assisted in 2 framework upgrades , Rails 2 to Rails 4
+
+## Software Engineer Intern at Procore Technologies
+
+February 2012 – June 2012
+
+- While I was also a student at UCSB, I worked part time at Procore
+- Saw projects through from start to finish, such as adding filters to many existing reports
+- Working with Rails, Ruby, CSS, Javascript
+
+## Contracted Lead Engineer at Los Angeles Closeout Center
+
+November 2012 - April 2013
+
+- Lead Engineer on a small team of three
+- Simple e-commerce Rails application for wholesale reseller based in Los Angeles
+- Responsible for all code review and deployment to heroku platform
+
+## Lifeguard at University of California, Santa Barbara
+
+May 2011 – May 2012
+
+- Monitored pool area for rule violations and hazardous situations
+- Provide general information about facilities to patrons 
+- Cleaning facilities and maintenance of chemical levels
+
+# Education
+
+## University of California, Santa Barbara
+
+Bachelor's Degree, Computer Science, 2008 – 2012
+
+- Senior Project: parallelizing image processing algorithm (seam-carving)
+- Worked with, and quickly adopted, a huge range of technologies including: C, C++, OpenGL, Nvidia's CUDA, Java, and Scala
+
+# Community
+
+- Participated at RailsGirlsLA 2015 as an instructor
+- Attended Railsconf in 2013
+- Attended Rubyconf in 2014
+
+# Other
+
+Some of my personal interests include music production, audio mastering, analogue synthesis, Splatoon, freestyle dance
