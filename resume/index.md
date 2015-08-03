@@ -14,7 +14,8 @@ Whether I am on a team or hacking on one of my personal projects, I love develop
 - Databases: PostgreSQL, MySQL
 - Web: HTML5, CSS3
 - Operating systems: Windows, OSX, Ubuntu, Archlinux
-- Text Editors: vim, SublimeText, notepad
+- Text Editors: vim, SublimeText 
+- Practices: REST, TDD, Object Oriented Design, Scrum, Agile
 
 # Work Experience
 
@@ -22,18 +23,19 @@ Whether I am on a team or hacking on one of my personal projects, I love develop
 
 June 2012 – June 2015
 
-- Rails and postgresql optimization, including memory efficiency and index optimization of queries
-- On call during downtime, helped mitigate several production emergencies
-- Lead developer on server side markup, and custom report projects
-- Assisted in 2 framework upgrades , Rails 2 to Rails 4
+- Rails and PostgreSQL optimization, including memory efficiency and index optimization of queries
+- On call during downtime, assisted in mitigating several production emergencies
+- Lead developer for
+  - Brand new RESTful web service responsible for saving and retrieving "drawing markup"
+  - Custom report projects, optimizing existing database tables to handle custom queries
+- Assisted in 2 framework upgrades: Rails 2 to Rails 3, and Rails 3 to Rails 4 
 
 ## Software Engineer Intern at Procore Technologies
 
 February 2012 – June 2012
 
-- While I was also a student at UCSB, I worked part time at Procore
 - Saw projects through from start to finish, such as adding filters to many existing reports
-- Working with Rails, Ruby, CSS, Javascript
+- Quickly adapted to working with Rails, Ruby, CSS, Javascript
 
 ## Contracted Lead Engineer at Los Angeles Closeout Center
 
@@ -68,4 +70,4 @@ Bachelor's Degree, Computer Science, 2008 – 2012
 
 # Other
 
-Some of my personal interests include music production, audio mastering, analogue synthesis, Splatoon, freestyle dance
+Some of my personal interests include music production, audio mastering, analog synthesis, Splatoon, freestyle dance
