@@ -1,9 +1,10 @@
-$max-width:  45em;
+$max-width:  44em;
 $padding: 16px;
 $mobile: new-breakpoint(max-width $max-width 4); 
 
 body {
   font: 400 1em Lato, 'Helvetica Neue', Helvetica, Arial, sans-serif;
+  font-size: 15px;
   text-align: left;
   background-color: $layout-white;
   color: $layout-black; 
@@ -12,7 +13,6 @@ body {
 
 #main{
   @include outer-container;
-  max-width: $max-width;
 }
 
 #markdown-container{

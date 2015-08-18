@@ -1,11 +1,15 @@
 ---
 layout: markdown
-title: Evan Goad Codes!
+title: Evan Goad Resume 
 ---
 
 # Summary 
 
-Whether I am on a team or hacking on one of my personal projects, I love developing software. Connecting people through web tech has become a passion of mine, and I am looking for a company to help grow my passion! My specialty is memory and database query optimization for Rails, but I am ready to take on any web stack.
+Whether I am on a team or hacking on one of my personal projects, I love
+developing software. Connecting people through web tech has become a passion of
+mine, and I am looking for a company to help grow my passion! My specialty is
+memory and database query optimization for Rails and PostgreSQL, but I am ready to take on any
+stack.
 
 # Technical Skills 
 
@@ -23,18 +27,21 @@ Whether I am on a team or hacking on one of my personal projects, I love develop
 
 June 2012 – June 2015
 
-- Rails and PostgreSQL optimization, including memory efficiency and index optimization of queries
+- Rails and PostgreSQL optimization, including memory efficiency and
+  optimization of high throughput queries
 - On call during downtime, assisted in mitigating several production emergencies
 - Lead developer for
-  - Brand new RESTful web service responsible for saving and retrieving "drawing markup"
-  - Custom report projects, optimizing existing database tables to handle custom queries
+  - RESTful web service responsible for saving and retrieving "drawing markup"
+  - Custom report projects, optimizing existing database tables to handle highly
+    customizable queries
 - Assisted in 2 framework upgrades: Rails 2 to Rails 3, and Rails 3 to Rails 4 
 
 ## Software Engineer Intern at Procore Technologies
 
 February 2012 – June 2012
 
-- Saw projects through from start to finish, such as adding filters to many existing reports
+- Saw projects through from start to finish, such as adding filters to many
+  existing reports
 - Quickly adapted to working with Rails, Ruby, CSS, Javascript
 
 ## Contracted Lead Engineer at Los Angeles Closeout Center
@@ -42,7 +49,8 @@ February 2012 – June 2012
 November 2012 - April 2013
 
 - Lead Engineer on a small team of three
-- Simple e-commerce Rails application for wholesale reseller based in Los Angeles
+- Simple e-commerce Rails application for wholesale reseller based in Los
+  Angeles
 - Responsible for all code review and deployment to heroku platform
 
 ## Lifeguard at University of California, Santa Barbara
@@ -60,7 +68,8 @@ May 2011 – May 2012
 Bachelor's Degree, Computer Science, 2008 – 2012
 
 - Senior Project: parallelizing image processing algorithm (seam-carving)
-- Worked with, and quickly adopted, a huge range of technologies including: C, C++, OpenGL, Nvidia's CUDA, Java, and Scala
+- Worked with, and quickly adopted, a huge range of technologies including: C,
+  C++, OpenGL, Nvidia's CUDA, Java, and Scala
 
 # Volunteer
 
@@ -69,7 +78,8 @@ Bachelor's Degree, Computer Science, 2008 – 2012
 May 2015
 
 - Helped students with variety of Windows and OSX laptops install Ruby and Rails
-- Taught student one-on-one the basics of a blog rails app with twitter bootstrap
+- Taught student one-on-one the basics of a blog rails app with twitter
+  bootstrap
 
 ## Logistics for Relay For Life UCSB
 
@@ -77,8 +87,10 @@ January 2011 - May 2012
 
 - Volunteered part time on Logistics team for 2011 event
 - Lead of Logistics team for the entirety of 2012 event
-- Responsible for building stage, sound system, electricity source, tables, tents, and more
+- Responsible for building stage, sound system, electricity source, tables,
+  tents, and more
 
 # Other
 
-Some of my personal interests include music production, audio mastering, analog synthesis, Splatoon, freestyle dance
+Some of my personal interests include music production, audio mastering, analog
+synthesis, Splatoon, freestyle dance
