@@ -62,11 +62,22 @@ Bachelor's Degree, Computer Science, 2008 – 2012
 - Senior Project: parallelizing image processing algorithm (seam-carving)
 - Worked with, and quickly adopted, a huge range of technologies including: C, C++, OpenGL, Nvidia's CUDA, Java, and Scala
 
-# Community
+# Volunteer
 
-- Participated at RailsGirlsLA 2015 as an instructor
-- Attended Railsconf in 2013
-- Attended Rubyconf in 2014
+## Instructor at Rails Girls Los Angeles
+
+May 2015
+
+- Helped students with variety of Windows and OSX laptops install Ruby and Rails
+- Taught student one-on-one the basics of a blog rails app with twitter bootstrap
+
+## Logistics for Relay For Life UCSB
+
+January 2011 - May 2012
+
+- Volunteered part time on Logistics team for 2011 event
+- Lead of Logistics team for the entirety of 2012 event
+- Responsible for building stage, sound system, electricity source, tables, tents, and more
 
 # Other
 
