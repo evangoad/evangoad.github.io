@@ -14,7 +14,7 @@ stack.
 # Technical Skills 
 
 - Programming Languages: Ruby, Javascript, C++, Java, Scala
-- Frameworks: Rails, Sinatra, Jekyll
+- Frameworks: Rails, Sinatra, Jekyll, React
 - Databases: PostgreSQL, MySQL
 - Web: HTML5, CSS3
 - Operating systems: Windows, OSX, Ubuntu, Archlinux
@@ -27,21 +27,21 @@ stack.
 
 June 2012 – June 2015
 
-- Rails and PostgreSQL optimization, including memory efficiency and
-  optimization of high throughput queries
+- Memory efficiency in Rails and PostgreSQL optimization for high demand
+  web services
 - On call during downtime, assisted in mitigating several production emergencies
 - Lead developer for
   - RESTful web service responsible for saving and retrieving "drawing markup"
-  - Custom report projects, optimizing existing database tables to handle highly
-    customizable queries
+  - Custom report projects, optimizing existing database tables to handle
+    variety of queries
 - Assisted in 2 framework upgrades: Rails 2 to Rails 3, and Rails 3 to Rails 4 
 
 ## Software Engineer Intern at Procore Technologies
 
 February 2012 – June 2012
 
-- Saw projects through from start to finish, such as adding filters to many
-  existing reports
+- Saw projects through from start to finish, one being a unified filter UI for many
+  existing web reports
 - Quickly adapted to working with Rails, Ruby, CSS, Javascript
 
 ## Contracted Lead Engineer at Los Angeles Closeout Center
@@ -51,7 +51,7 @@ November 2012 - April 2013
 - Lead Engineer on a small team of three
 - Simple e-commerce Rails application for wholesale reseller based in Los
   Angeles
-- Responsible for all code review and deployment to heroku platform
+- Responsible for all code review and deployment to heroku 
 
 ## Lifeguard at University of California, Santa Barbara
 
@@ -87,8 +87,8 @@ January 2011 - May 2012
 
 - Volunteered part time on Logistics team for 2011 event
 - Lead of Logistics team for the entirety of 2012 event
-- Responsible for building stage, sound system, electricity source, tables,
-  tents, and more
+- Responsible for building stage, sound system, generators, tables, tents, and
+  more
 
 # Other
 
