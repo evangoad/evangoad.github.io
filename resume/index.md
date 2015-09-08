@@ -5,9 +5,9 @@ title: Evan Goad Resume
 
 # Summary 
 
-Whether I am on a team or hacking on one of my personal projects, I love
-developing software. Connecting people through web tech has become a passion of
-mine, and I am looking for a company to help grow my passion! My specialty is
+Whether I am contributing to a scrum team or hacking on one of my personal projects, I love
+developing software. Connecting people through web technology has become a passion of
+mine, and I am looking for a company to help grow this passion! My specialty is
 memory and database query optimization for Rails and PostgreSQL, but I am ready to take on any
 stack.
 
