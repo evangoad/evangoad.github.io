@@ -5,11 +5,11 @@ title: Evan Goad Resume
 
 # Summary 
 
-Whether I am contributing to a scrum team or hacking on one of my personal projects, I love
-developing software. Connecting people through web technology has become a passion of
-mine, and I am looking for a company to help grow this passion! My specialty is
-memory and database query optimization for Rails and PostgreSQL, but I am ready to take on any
-stack.
+Whether I am contributing to a scrum team or hacking on one of my personal
+projects, I love developing software. Connecting people through web technology
+has become a passion of mine, and I am looking for a company to help grow this
+passion! I specialize in solving difficult bugs at critical times, as well as
+memory and database query optimization for Rails and PostgreSQL. 
 
 # Technical Skills 
 
@@ -18,8 +18,9 @@ stack.
 - Databases: PostgreSQL, MySQL
 - Web: HTML5, CSS3
 - Operating systems: Windows, OSX, Ubuntu, Archlinux
-- Text Editors: vim, SublimeText 
-- Practices: REST, TDD, Object Oriented Design, Scrum, Agile
+- Text Editors: vim, SublimeText
+- IDEs: Visual Studio 2012, Eclipse
+- Practices: REST, TDD, Object Oriented Design, MVC, Scrum, Agile
 
 # Work Experience
 
@@ -27,11 +28,12 @@ stack.
 
 June 2012 – June 2015
 
-- Memory efficiency in Rails and PostgreSQL optimization for high demand
-  web services
+- Memory efficiency in Rails and PostgreSQL optimization for high demand web
+  services
 - On call during downtime, assisted in mitigating several production emergencies
 - Lead developer for
-  - RESTful web service responsible for saving and retrieving "drawing markup"
+  - RESTful HTTP API responsible for saving and retrieving "drawing markup",
+    coordinating simultaneous releases on Web, iOS, and Android.
   - Custom report projects, optimizing existing database tables to handle
     variety of queries
 - Assisted in 2 framework upgrades: Rails 2 to Rails 3, and Rails 3 to Rails 4 
@@ -40,8 +42,8 @@ June 2012 – June 2015
 
 February 2012 – June 2012
 
-- Saw projects through from start to finish, one being a unified filter UI for many
-  existing web reports
+- Saw projects through from start to finish, one being a unified filter UI for
+  many existing web reports
 - Quickly adapted to working with Rails, Ruby, CSS, Javascript
 
 ## Contracted Lead Engineer at Los Angeles Closeout Center
