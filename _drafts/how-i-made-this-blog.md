@@ -6,10 +6,16 @@ permalink: blog/how-i-made-this-blog
 
 # How I made this blog
 
-If you are a developer that has already set up a Github account and is familiar
-with the [basics of version control](www.google.com), then you should be able to
-setup a static website 
-you shouldn't be able to setup a personal website for your portfolio and 
+When I went on my job hunt recently, I wanted to have a personal website to work
+as marketing for my developer skills.  I wanted a place that included my resume,
+my contanct information, and a technical blog.  I wanted a hosting solution that
+would cost me no money, and I wanted the source of my website to be
+open source.  After a bit of research online, I decided that Github Pages is the
+perfect tool for these needs.
+
+If you are a developer with a Github account and is familiar
+with the [basics of version control](www.google.com), then you ready to follow
+my tutorial on how to setup a static website on Github Pages.  Prior knowledge of html, 
 
 ## 1) "Hello Github Pages!"
 
