@@ -10,10 +10,6 @@
   url: /blog/
   icon: fa-rss
 
-- description: twitter
-  url: http://twitter.com/evangoadcodes 
-  icon: fa-twitter
-
 - description: github
   url: http://github.com/evangoad
   icon: fa-github-alt
@@ -21,4 +17,8 @@
 - description: linkedin
   url: https://linkedin.com/in/evangoad
   icon: fa-linkedin
+
+- description: twitter
+  url: http://twitter.com/evangoadcodes 
+  icon: fa-twitter
 

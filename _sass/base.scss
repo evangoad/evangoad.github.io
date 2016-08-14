@@ -2,11 +2,11 @@ $max-width: 64em;
 $padding: 16px;
 $mobile: new-breakpoint(max-width $max-width 4); 
 $sidebar-width: 18em;
-$s-sidebar-width: 12em;
+$s-sidebar-width: 10em;
 
 body {
-  font: 400 1em Lato, 'Helvetica Neue', Helvetica, Arial, sans-serif;
-  font-size: 15px;
+  font: 400 1.1em Lato, 'Helvetica Neue', Helvetica, Arial, sans-serif;
+  font-size: 17px;
   text-align: left;
   background-color: $layout-white;
   color: $layout-black; 
@@ -15,8 +15,9 @@ body {
 
 #main-content{
   @include outer-container;
-	max-width: 55em;
+	max-width: 50em;
 	height: 100%;
+  line-height: 1.5em;
   margin-left: $sidebar-width;
   @include media($mobile) {
     margin-left: $s-sidebar-width;
