@@ -1,7 +1,8 @@
-$max-width:  55em;
+$max-width: 64em;
 $padding: 16px;
 $mobile: new-breakpoint(max-width $max-width 4); 
-$sidebar-width: 24em;
+$sidebar-width: 18em;
+$s-sidebar-width: 12em;
 
 body {
   font: 400 1em Lato, 'Helvetica Neue', Helvetica, Arial, sans-serif;
@@ -13,39 +14,15 @@ body {
  }
 
 #main-content{
-	width:100%;
-	height:100%;
-  margin-left: $sidebar-width;
-}
-
-#sidebar{
-	position:fixed;
-  width: $sidebar-width;
-  height:100%;
-	top:0;
-	left:0;
-  background: linear-gradient(to right, #dadada, #f9f9f9);
-
-  nav {
-    height: inherit;
-		.link-area {
-      text-decoration: none;
-			text-align: right;
-      color: black;
-			font-size: 4em;
-			width: 100%;
-			height: 16%;
-      .fa {
-        vertical-align: middle;
-        margin-right: 1em;
-      }
-		}
-  }
-}
-
-
-#main{
   @include outer-container;
+	max-width: 55em;
+	height: 100%;
+  margin-left: $sidebar-width;
+  @include media($mobile) {
+    margin-left: $s-sidebar-width;
+  }
+  margin-right: 1em;
+  margin-top: 2em;
 }
 
 #markdown-container{

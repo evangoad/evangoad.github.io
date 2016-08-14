@@ -2,3 +2,9 @@ sass:
   sass_dir: _sass
   style: compressed
 exclude: [vendor]
+defaults:
+- scope:
+    path: "" # an empty string here means all files in the project
+  values:
+    nav: "blog"
+    layout: "default"

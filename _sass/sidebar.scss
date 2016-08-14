@@ -1,0 +1,60 @@
+#sidebar{
+  @media print{ display: none; }
+  position:fixed;
+  width: $sidebar-width;
+  @include media($mobile) {
+    width: $s-sidebar-width;
+  }
+  height:100%;
+  top:0;
+  left:0;
+  background: linear-gradient(to right, #dadada, #f9f9f9);
+  nav {
+    height: inherit;
+    a {
+      text-decoration: none;
+    }
+    .link-area {
+      text-align: right;
+      color: black;
+      font-size: 3.5em;
+      width: 100%;
+      height: 16%;
+      &.active{
+        .link-description {
+          display: inline;
+          @include media($mobile) {
+            display: none;
+          }
+        }
+      }
+      .link-description {
+        display: none;
+        font-size: .5em;
+        margin-right: .5em;
+      }
+      &:hover{ 
+        .link-description{
+          @include media($mobile) {
+            display: none;
+          }
+          display: inline;
+          color: $layout-black;
+          -o-transition:.2s;
+          -ms-transition:.2s;
+          -moz-transition:.2s;
+          -webkit-transition:.2s;
+        }
+      }
+      .link-icon{
+        margin-right: 1em;
+        .fa {
+          margin-top: 1em;
+          @include media($mobile) {
+            margin-top: 2em;
+          }
+        }
+      }
+    }
+  }
+}

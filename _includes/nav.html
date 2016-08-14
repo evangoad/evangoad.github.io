@@ -1,0 +1,18 @@
+<nav>
+  {% for member in site.data.nav_links %}
+    <a href="{{ member.url }}">
+    {% if page.nav == member.description %}
+      <div class="link-area active">
+    {% else %}
+      <div class="link-area">
+    {% endif %}
+        <span class="link-description">
+          {{ member.description }}
+        </span>
+        <span class="link-icon">
+          <i class="fa {{ member.icon }}"></i>
+        </span>
+      </div>
+    </a>
+  {% endfor %}
+</nav>

@@ -1,6 +1,7 @@
 ---
 layout: markdown
 title: Evan Goad Resume 
+nav: resume
 ---
 
 # Summary 
