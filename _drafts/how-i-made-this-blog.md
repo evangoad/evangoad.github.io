@@ -1,21 +1,23 @@
 ---
 layout: markdown
-title: How I Made this Blog 
-permalink: blog/how-i-made-this-blog
+title: How I Made this Website 
+permalink: blog/how-i-made-this-website
 ---
 
-# How I made this blog
+# How I made this Website
 
-When I went on my job hunt recently, I wanted to have a personal website to work
-as marketing for my developer skills.  I wanted a place that included my resume,
+When I went on my job hunt recently, I wanted to create a personal website to
+demonstrate my developer web skills.  I wanted something that included my resume,
 my contanct information, and a technical blog.  I wanted a hosting solution that
 would cost me no money, and I wanted the source of my website to be
-open source.  After a bit of research online, I decided that Github Pages is the
+open source.  
+
+After a bit of research online, I decided that Github Pages is the
 perfect tool for these needs.
 
-If you are a developer with a Github account and is familiar
-with the [basics of version control](www.google.com), then you ready to follow
-my tutorial on how to setup a static website on Github Pages.  Prior knowledge of html, 
+If you are a developer with a Github account and is familiar with the [basics of
+version control](www.google.com), then you are ready to setup a static website
+on Github Pages. 
 
 ## 1) "Hello Github Pages!"
 

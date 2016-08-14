@@ -8,8 +8,9 @@
   height:100%;
   top:0;
   left:0;
-  background: linear-gradient(to right, #dadada, #f9f9f9);
+  background: linear-gradient(to right, $layout-gray, $layout-white);
   nav {
+    margin-top: $layout-padding;
     height: inherit;
     a {
       text-decoration: none;
@@ -20,9 +21,9 @@
       color: $layout-black;
       font-size: 3.5em;
       width: 100%;
-      height: 16%;
+      height: 13%;
       &.active{
-        background-color: #dadada;
+        background-color: $layout-gray;
         .link-description {
           display: table-cell;
           @include media($mobile) {
@@ -37,15 +38,10 @@
       }
       &:hover{ 
         .link-description{
+          display: table-cell;
           @include media($mobile) {
             display: none;
           }
-          display: table-cell;
-          color: $layout-black;
-          -o-transition:.2s;
-          -ms-transition:.2s;
-          -moz-transition:.2s;
-          -webkit-transition:.2s;
         }
       }
       span {

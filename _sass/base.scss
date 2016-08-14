@@ -1,9 +1,3 @@
-$max-width: 64em;
-$padding: 16px;
-$mobile: new-breakpoint(max-width $max-width 4); 
-$sidebar-width: 18em;
-$s-sidebar-width: 10em;
-
 body {
   font: 400 1.1em Lato, 'Helvetica Neue', Helvetica, Arial, sans-serif;
   font-size: 17px;
@@ -15,21 +9,27 @@ body {
 
 #main-content{
   @include outer-container;
-	max-width: 49em;
+	max-width: 52em;
   min-width: 350px;
-	height: 100%;
-  line-height: 1.5em;
+  margin-top: 1em;
   margin-left: $sidebar-width;
   @include media($mobile) {
     margin-left: $s-sidebar-width;
   }
-  margin-right: 1em;
-  margin-top: 2em;
+  @media print {
+    margin-left: $layout-padding;
+  }
+  p {
+    line-height: 1.5em;
+  }
+}
+
+.padding-container {
+  padding: $layout-padding;
 }
 
 #markdown-container{
   @include span-columns(12);
-  padding: 1em;
 }
 
 .profile-picture {
@@ -39,18 +39,20 @@ body {
     text-align: center;
   }
   img {
-    padding: 1em;
+    padding: 0  $layout-padding 0 0;
+    @include media($mobile) {
+      padding: 0;
+    }
     width: 15em;
   }
 }
 
 .about-me {
   @include span-columns(8);
-  @include omega();
   @include media($mobile) {
     @include span-columns(4);
     text-align: center;
-    padding: 1em;
+    padding: $layout-padding;
   }
 }
 
