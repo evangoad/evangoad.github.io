@@ -149,6 +149,7 @@ PLATFORMS
   ruby
 
 DEPENDENCIES
+  bourbon
   github-pages
   html-proofer
   jekyll

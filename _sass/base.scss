@@ -1,5 +1,5 @@
 body {
-  font: 400 1.1em Lato, 'Helvetica Neue', Helvetica, Arial, sans-serif;
+  font: 300 1.1em Lato, 'Helvetica Neue', Helvetica, Arial, sans-serif;
   font-size: 17px;
   text-align: left;
   background-color: $layout-white;
@@ -9,16 +9,12 @@ body {
 
 #main-content{
   @include outer-container;
-	max-width: 52em;
+	max-width: 50em;
   min-width: 350px;
   margin-top: 1em;
   margin-left: $sidebar-width;
-  @include media($mobile) {
-    margin-left: $s-sidebar-width;
-  }
-  @media print {
-    margin-left: $layout-padding;
-  }
+  @include media($mobile) { margin-left: $s-sidebar-width; }
+  @media print { margin-left: $layout-padding; }
   p {
     line-height: 1.5em;
   }
@@ -39,10 +35,8 @@ body {
     text-align: center;
   }
   img {
-    padding: 0  $layout-padding 0 0;
-    @include media($mobile) {
-      padding: 0;
-    }
+    padding: 0 $layout-padding 0 0;
+    @include media($mobile) { padding: 0; }
     width: 15em;
   }
 }

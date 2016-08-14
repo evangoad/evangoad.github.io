@@ -2,9 +2,7 @@
   @media print{ display: none; }
   position:fixed;
   width: $sidebar-width;
-  @include media($mobile) {
-    width: $s-sidebar-width;
-  }
+  @include media($mobile) { width: $s-sidebar-width; }
   height:100%;
   top:0;
   left:0;
@@ -26,9 +24,7 @@
         background-color: $layout-gray;
         .link-description {
           display: table-cell;
-          @include media($mobile) {
-            display: none;
-          }
+          @include media($mobile) { display: none; }
         }
       }
       .link-description {
@@ -37,11 +33,10 @@
         margin-right: .5em;
       }
       &:hover{ 
+        @include media($mobile) { background-color: $layout-white; }
         .link-description{
           display: table-cell;
-          @include media($mobile) {
-            display: none;
-          }
+          @include media($mobile) { display: none; }
         }
       }
       span {
@@ -50,6 +45,7 @@
       }
       .link-icon{
         padding-right: 1em;
+        @include media($mobile) { padding-right: .5em; }
         width: 45%;
       }
     }
