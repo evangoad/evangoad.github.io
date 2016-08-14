@@ -1,4 +1,5 @@
-<nav>
+<div id="sidebar">
+  <nav>
   {% for member in site.data.nav_links %}
     <a href="{{ member.url }}">
     {% if page.nav == member.description %}
@@ -15,4 +16,5 @@
       </div>
     </a>
   {% endfor %}
-</nav>
+  </nav>
+</div>
