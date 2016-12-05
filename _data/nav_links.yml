@@ -1,0 +1,24 @@
+- description: home
+  url: /
+  icon: fa-home
+
+- description: resume
+  url: /resume/
+  icon: fa-file-text-o
+
+# - description: blog
+#   url: /blog/
+#   icon: fa-rss
+
+- description: github
+  url: http://github.com/evangoad
+  icon: fa-github-alt
+
+- description: linkedin
+  url: https://linkedin.com/in/evangoad
+  icon: fa-linkedin
+
+- description: twitter
+  url: http://twitter.com/evangoadcodes 
+  icon: fa-twitter
+

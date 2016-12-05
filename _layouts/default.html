@@ -2,9 +2,10 @@
 <html lang="en-US">
   {% include head.html %}
   <body>
-    <div id="main" role="main">
-      {% include header.html %}
-      {{ content }}
+    {% include sidebar.html %}
+    <div id="main-content" class="padding-container">
+        {{ content }}
+      </div>
     </div>
   </body>
 </html>

@@ -1,6 +1,7 @@
 ---
 layout: markdown
 title: Evan Goad Resume 
+nav: resume
 ---
 
 # Summary 
@@ -45,23 +46,6 @@ February 2012 – June 2012
 - Saw projects through from start to finish, one being a unified filter UI for
   many existing web reports
 - Quickly adapted to working with Rails, Ruby, CSS, Javascript
-
-## Contracted Lead Engineer at Los Angeles Closeout Center
-
-November 2012 - April 2013
-
-- Lead Engineer on a small team of three
-- Simple e-commerce Rails application for wholesale reseller based in Los
-  Angeles
-- Responsible for all code review and deployment to heroku 
-
-## Lifeguard at University of California, Santa Barbara
-
-May 2011 – May 2012
-
-- Monitored pool area for rule violations and hazardous situations
-- Provide general information about facilities to patrons 
-- Cleaning facilities and maintenance of chemical levels
 
 # Education
 
