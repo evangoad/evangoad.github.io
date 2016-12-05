@@ -6,9 +6,9 @@
   url: /resume/
   icon: fa-file-text-o
 
-- description: blog
-  url: /blog/
-  icon: fa-rss
+# - description: blog
+#   url: /blog/
+#   icon: fa-rss
 
 - description: github
   url: http://github.com/evangoad
