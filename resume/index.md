@@ -1,6 +1,6 @@
 ---
 layout: markdown
-title: Evan Goad Resume 
+title: Evan Goad's Resume 
 nav: resume
 ---
 
@@ -9,21 +9,30 @@ nav: resume
 Whether I am contributing to a scrum team or hacking on one of my personal
 projects, I love developing software. Connecting people through web technology
 has become a passion of mine, and I am looking for a company to help grow this
-passion! I specialize in solving difficult bugs at critical times, as well as
-memory and database query optimization for Rails and PostgreSQL. 
+passion! 
 
 # Technical Skills 
 
-- Programming Languages: Ruby, Javascript, C++, Java, Scala
+- Programming Languages: Ruby, Javascript (with Typescript), C++, Java, Scala, Python
 - Frameworks: Rails, Sinatra, Jekyll, React
 - Databases: PostgreSQL, MySQL
 - Web: HTML5, CSS3
-- Operating systems: Windows, OSX, Ubuntu, Archlinux
-- Text Editors: vim, SublimeText
-- IDEs: Visual Studio 2012, Eclipse
+- Operating systems: Windows, OSX, Ubuntu
+- Text Editors: vim, SublimeText, Atom
+- IDEs: Visual Studio, Eclipse
 - Practices: REST, TDD, Object Oriented Design, MVC, Scrum, Agile
 
 # Work Experience
+
+## Software Engineer at Liquid Planner
+
+December 2015 - October 2017
+
+- Working with Rails, PostgreSQL, and React to deliver new features in a rich
+  project management application
+- Assisted in introducing the first client side framework for the company
+- On call via pagerduty, as well as occasional information provided for support
+- Assisted with devops via ansible
 
 ## Software Engineer at Procore Technologies
 
@@ -31,7 +40,7 @@ June 2012 – June 2015
 
 - Memory efficiency in Rails and PostgreSQL optimization for high demand web
   services
-- On call during downtime, assisted in mitigating several production emergencies
+- On call during downtime, assisted in mitigating production emergencies
 - Lead developer for
   - RESTful HTTP API responsible for saving and retrieving "drawing markup",
     coordinating simultaneous releases on Web, iOS, and Android.
@@ -78,5 +87,5 @@ January 2011 - May 2012
 
 # Other
 
-Some of my personal interests include music production, audio mastering, analog
-synthesis, Splatoon, freestyle dance
+Some of my personal interests include music production, audio mastering,
+Splatoon, freestyle dance, mixing freestyle dance music.
