@@ -39,12 +39,12 @@ December 2015 - September 2017
 June 2012 – June 2015
 
 - Memory efficiency in Rails and PostgreSQL optimization for high demand
-  web services that scale.
+  web services that scale
 - On call during downtime, assisted in mitigating production emergencies
-- Lead developer for RESTful HTTP API responsible for saving and retrieving "drawing markup",
-  coordinating simultaneous releases on Web, iOS, and Android.
-- Lead developer for Custom report projects, optimizing existing database tables to handle
-  variety of queries
+- Lead developer for backend infrastructure of "Drawing Markup" tool, a RESTful
+  HTTP API coordinating simultaneous releases on Web and mobile (iOS, Android)
+- Lead developer for Custom report projects, optimizing existing database tables
+  to handle variety of queries
 - Assisted in 2 framework upgrades: Rails 2 to Rails 3, and Rails 3 to Rails 4 
 
 ## Software Engineer Intern at Procore Technologies
