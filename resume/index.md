@@ -31,7 +31,7 @@ December 2015 - September 2017
 - Working with Rails, PostgreSQL, and React to deliver new features in a rich
   project management application
 - Assisted in introducing the first client side framework for the company
-- On call via pagerduty, as well as occasional information provided for support
+- On call via pagerduty, as well as coordinating with the support tema on issues 
 - Assisted with devops via ansible
 
 ## Software Engineer at Procore Technologies
