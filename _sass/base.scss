@@ -3,17 +3,17 @@ body {
   font-size: 15px;
   text-align: left;
   background-color: $layout-white;
-  color: $layout-black; 
+  color: $layout-black;
   margin: 0;
  }
 
 #main-content{
-  @include outer-container;
+  // @include outer-container;
 	max-width: 50em;
   min-width: 350px;
   margin-top: 1em;
   margin-left: $sidebar-width;
-  @include media($mobile) { margin-left: $s-sidebar-width; }
+  // @include media($mobile) { margin-left: $s-sidebar-width; }
   @media print { margin-left: $layout-padding; }
   p {
     line-height: 1.5em;
@@ -25,28 +25,28 @@ body {
 }
 
 #markdown-container{
-  @include span-columns(12);
+  // @include span-columns(12);
 }
 
 .profile-picture {
-  @include span-columns(4);
-  @include media($mobile) {
-    @include span-columns(4);
-    text-align: center;
-  }
+  // @include span-columns(4);
+  // @include media($mobile) {
+  //   @include span-columns(4);
+  //   text-align: center;
+  // }
   img {
     padding: 0 $layout-padding 0 0;
-    @include media($mobile) { padding: 0; }
+    // @include media($mobile) { padding: 0; }
     width: 15em;
   }
 }
 
 .about-me {
-  @include span-columns(8);
-  @include media($mobile) {
-    @include span-columns(4);
-    text-align: center;
-    padding: $layout-padding;
-  }
+  // @include span-columns(8);
+  // @include media($mobile) {
+  //   @include span-columns(4);
+  //   text-align: center;
+  //   padding: $layout-padding;
+  // }
 }
 

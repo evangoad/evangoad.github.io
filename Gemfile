@@ -1,9 +1,9 @@
 source 'https://rubygems.org'
 
-gem 'jekyll'
-gem 'html-proofer'
-gem 'bourbon'
-gem 'neat'
-gem 'github-pages'
-gem 'jekyll-feed'
+group :development, :test do
+    gem 'github-pages', '~> 179'
+    gem 'jekyll', '3.6.2'
+    gem 'bourbon'
+    gem 'neat'
+end
 
