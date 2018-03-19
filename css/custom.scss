@@ -1,0 +1,25 @@
+---
+---
+
+#about-me-wrapper {
+  display: inline-block;
+  img, p {
+    display: inline-block;
+  }
+  img {
+    max-width: 250px;
+    border-radius: 50%;
+    margin: 0 1em 2em 0;
+  }
+  @media (min-width: 700px) {
+    p {
+      width: 63%;
+    }
+  }
+}
+
+#landing-banner {
+  text-align: center;
+  margin: 4em 0;
+}
+
