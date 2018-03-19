@@ -1,18 +1,7 @@
 title: EvanGoad.Codes
 author: Contact Information
 theme: minima
-# header_pages:
-# - about/index.html
-# header_pages:
-#   - about.html
-#   - resume/index.md
-#   - blog/index.md
 twitter_username: evangoadcodes
 github_username: evangoad
 linkedin_username: evangoad
-# defaults:
-# - scope:
-#     path: "" # an empty string here means all files in the project
-#   values:
-#     nav: "blog"
-#     layout: "default"
+
