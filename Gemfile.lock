@@ -256,6 +256,7 @@ DEPENDENCIES
   github-pages (~> 179)
   html-proofer
   jekyll (= 3.6.2)
+  minima
   neat
 
 BUNDLED WITH

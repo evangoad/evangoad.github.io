@@ -1,5 +1,4 @@
 ---
-layout: markdown
 title: How I Made this Website 
 permalink: blog/how-i-made-this-website
 ---
