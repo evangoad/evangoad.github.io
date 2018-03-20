@@ -1,11 +1,11 @@
 ---
 title: "Building this Blog Part 1: Hello World"
-permalink: blog/buliding-this-blog-part-1-hello-world
 layout: post
+date: 2018-03-19
 ---
 
 When I went on my job hunt recently, I wanted to create a simple personal
-website to house a blog andlist my contact information.  I wanted a hosting
+website to house a blog and list my contact information.  I wanted a hosting
 solution that would cost me no money, and I wanted the source of my website to
 be open source.  
 
@@ -23,12 +23,12 @@ The repository for this static website is what Github calls a "User Pages
 site", as documented
 [here](https://help.github.com/articles/user-organization-and-project-pages/#user-and-organization-pages-sites).
 The first step is creating a new github repository named
-`$GITHUB_USER.github.io`.  So in my case thats evangoad.github.io.  Visit
-[github.com/new](https://github.com/new)
+`$GITHUB_USER.github.io`.  So in my case that's evangoad.github.io.  Visit
+[github.com/new](https://github.com/new) to create a new repository.
 
 ![Image of me creating evangoad.github.io repository](/images/github-create-repository-evangoad-github-io.png)
 
-As you can see, I have already created this repository.  I can't recommend
+As you can see, I have already created this repository.  I don't recommend
 making this repository private since the static site's contents are going to be
 publicly available anyway.  Making your personal static website an open source
 project allows it to be versioned and hosted for free on github pages, which is

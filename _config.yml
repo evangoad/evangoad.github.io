@@ -4,4 +4,6 @@ theme: minima
 twitter_username: evangoadcodes
 github_username: evangoad
 linkedin_username: evangoad
+disqus:
+  shortname: evangoad
 
