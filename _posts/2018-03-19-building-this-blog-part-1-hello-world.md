@@ -13,7 +13,7 @@ After a bit of research online, I decided that the static website hosting
 service called [Github
 Pages](https://help.github.com/articles/what-is-github-pages/) is the perfect
 tool for my needs.  If you own a Github account and are familiar with the
-[basics of version control](www.google.com), then you are ready to setup a
+[basics of version control](https://guides.github.com/activities/hello-world/), then you are ready to setup a
 static website with Github Pages just like i did.  Here's how I would recommend
 going about it:
 
