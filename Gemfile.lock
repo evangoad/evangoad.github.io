@@ -257,11 +257,11 @@ PLATFORMS
 
 DEPENDENCIES
   bourbon
-  github-pages (~> 179)
+  github-pages
   html-proofer
-  jekyll (= 3.6.2)
+  jekyll
   minima
   neat
 
 BUNDLED WITH
-   1.16.2
+   2.2.11
