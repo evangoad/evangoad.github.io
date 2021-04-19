@@ -1,0 +1,29 @@
+baseURL = "http://evangoad.github.io/"
+languageCode = "en-us"
+title = "Evan Goad"
+theme = "hugo-theme-cleanwhite"
+paginate = 5 #frontpage pagination
+preserveTaxonomyNames = true
+
+[outputs]
+home = ["HTML", "RSS"]
+
+[params]
+  header_image = "img/flowers.jpg"
+  about_me = true
+  sidebar_about_description = "Software Developer, Full Stack and Site Reliability"
+  sidebar_avatar = "img/profile.jpg"
+  featured_tags = false
+  showtoc = false
+
+[params.social]
+  linkedin = "https://www.linkedin.com/in/evangoad"
+  github = "https://github.com/evangoad"
+
+[[params.addtional_menus]]
+  title =  "ABOUT"
+  href =  "/top/about/"
+
+[markup]
+  [markup.highlight]
+    style = "dracula"
