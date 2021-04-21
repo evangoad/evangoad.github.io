@@ -1,9 +1,9 @@
 ---
 title: "Comparing Hugo performance on Github and Gitlab"
-date: 2021-04-20
+date: 2021-04-21
 layout: post
 author: Evan Goad
-URL: 2021/04/20/comparing-hugo-performance-on-github-and-gitlab
+URL: 2021/04/21/comparing-hugo-performance-on-github-and-gitlab
 tags:
     - Hugo
     - Gitlab
@@ -61,7 +61,7 @@ popular SSGs are at the moment:
 
 ![Image of Generators listed at jamstack.org listed in order of popularity:
 Next.js, Hugo, Gatsby, Jekyll, Nuxt,
-Hexo](/img/20210420/jamstack-generators.png)
+Hexo](/img/20210421/jamstack-generators.png)
 
 [Hugo](https://gohugo.io/) immediately stuck out to me in the sea of
 javascript, ruby, and python solutions.  Everybody tells me this Go language is
@@ -75,7 +75,7 @@ that Hugo has fantastic documentation site, and official documentation for both
 [Gitlab Pages](https://gohugo.io/hosting-and-deployment/hosting-on-gitlab/).   
 
 ![Screenshot of both the Github and Gitlab documentation
-pages](/img/20210420/hugo-docs-support.png)
+pages](/img/20210421/hugo-docs-support.png)
 
 This is great!  I have met the criteria for #1 and #2 so far.  I won't be able
 to test the performance until I am hosted on Github and Gitlab, so we'll forget
@@ -105,7 +105,7 @@ really like this
 [hugo-theme-cleanwhite](content/post/building-the-exact-same-hugo-blog-on-gitlab-and-github.md)
 created for the personal blog https://zhaohuabing.com
 
-![Screenshot of the example website](/img/20210420/theme-example.png)
+![Screenshot of the example website](/img/20210421/theme-example.png)
 
 Looks great!  I had the option of copying the theme's files directly to my repository, or using a submodule.  I went with the submodule:
 
@@ -218,7 +218,7 @@ At this point, I [commit my
 changes](https://github.com/evangoad/evangoad.github.io/commit/0dadfc37fefb60161d2554f3e6bc3a56f958b9ba#diff-28043ff911f28a5cb5742f7638363546311225a63eabc365af5356c70d4deb77)
 and I push them to my repository in order to test the deployment.
 
-![Screenshot of my firt Github Action run failing](/img/20210420/github-action-failure.png)
+![Screenshot of my firt Github Action run failing](/img/20210421/github-action-failure.png)
 
 Oh no! It failed! I'm still not sure why, but the build is not working on this
 specific part of the theme.  Luckily for me, I selected a theme where the
@@ -228,7 +228,7 @@ and comment out the `async` calls that were bugging out. I pushed that change
 in [this
 commit](https://github.com/evangoad/evangoad.github.io/commit/3df21db92dec56ae520b8c64977b1d3f2e490c78)
 
-![Screenshot of my first successful Github Action run](/img/20210420/github-action-success.png)
+![Screenshot of my first successful Github Action run](/img/20210421/github-action-success.png)
 
 Success!  And look at how short that deploy action was, just 12 seconds.  I
 checked evangoad.github.io and my static website was up and running. I quickly
@@ -273,7 +273,7 @@ I was really impressed with how simple and straightforward this config is.  I
 was able to get a working build on evangoad.gitlab.io with [this
 commit](https://gitlab.com/evangoad/evangoad.gitlab.io/-/commit/b6956f6bc1fa8003009f58d16d7b934e4ebd1655).
 
-![Screenshot of successful deploy on Gitlab](/img/20210420/gitlab-success.png)
+![Screenshot of successful deploy on Gitlab](/img/20210421/gitlab-success.png)
 
 Another very fast build at 21 seconds.  I am very happy to discover that Hugo
 builds extremely fast on both Github and Gitlab. They have both exceeded my
@@ -314,7 +314,7 @@ I was serving was a similar as possible, so I could isolate the differnces
 between the two services.  First, I check the grade for the original theme
 (https://zhaohuabing.com/) to set a baseline of expectations:
 
-![Screentshot of zhaohuabing.com's score, a 95 out of 100](/img/20210420/theme-grade.png)
+![Screentshot of zhaohuabing.com's score, a 95 out of 100](/img/20210421/theme-grade.png)
 
 95 out of 100 criteria are met!  That screenshot is only a small portion of the information we
 recieve. In the rest of the report there are only a handful issues about
@@ -322,14 +322,14 @@ jquery, old css prefixes, and color complexity.
 
 So now lets run the same command for Github:
 
-![Screenshot of my github website's score, a 94 out of 100](/img/20210420/github-grade.png)
+![Screenshot of my github website's score, a 94 out of 100](/img/20210421/github-grade.png)
 
 94 out of 100!  The only regression here is related to an unused font-awesome
 asset, so I am going to ignore it for now.
 
 Now let's see how the Gitlab site is fairing:
 
-![Screenshot of my gitlab website's score, a 91 out of 100](/img/20210420/gitlab-bad-grade.png)
+![Screenshot of my gitlab website's score, a 91 out of 100](/img/20210421/gitlab-bad-grade.png)
 
 Yikes! There is a clear difference here when it comes to compression of
 assets. I searched for guidance around compression and Gitlab Pages, and came
@@ -366,7 +366,7 @@ pages:
 Always happy to switch to an alpine image!  [The deploy](https://gitlab.com/evangoad/evangoad.gitlab.io/-/pipelines/290102416/builds) only took 29 seconds,
 and after running Yellowlab.tools again:
 
-![](/img/20210420/gitlab-better-grade.png)
+![Screen shot of gitlab website's score, 94 out of 100](/img/20210421/gitlab-better-grade.png)
 
 Hooray! Now Github and Gitlab have identical scores.  I am satisfied with how
 my content is generated, now it's time to do some speed tests.
@@ -381,8 +381,8 @@ helpful for understanding the general latency that is going to be present, and
 how it deviates per region.  Here are the results for both the github site and
 the gilab site: 
 
-![](/img/20210420/keycdn-github-perf.png)
-![](/img/20210420/keycdn-gitlab-perf.png)
+![](/img/20210421/keycdn-github-perf.png)
+![](/img/20210421/keycdn-gitlab-perf.png)
 
 As you can see, Github is outperforming Gitlab in every category here.  I'm not
 sure why this is the case, but it definitely shows that Github has won round 1
@@ -395,8 +395,8 @@ of time it takes for a web page to finish loading, assets included.  It has a
 sample size of 15, so you are really testing the speed of the page when it
 should be cached.
 
-![](/img/20210420/keycdn-github-speed.png)
-![](/img/20210420/keycdn-gitlab-speed.png)
+![Screenshot of Github speed, around 500ms on average](/img/20210421/keycdn-github-speed.png)
+![Screenshot of Gitlab speed, around 1s on average](/img/20210421/keycdn-gitlab-speed.png)
 
 The Gitlab website is twice as slow as the Github website.  I was noticing this
 too when I was browsing my sites in firefox.  The Github hosted one felt
@@ -404,22 +404,22 @@ noticeably snappier, so I took a look at the network tab.  And what I found is
 that Gitlab is basically never caching the assets!  No wonder it is taking so
 much long than Github, which is again, doing something automatically for us.
 
-![](/img/20210420/asset-cache-comparison.png)
+![Screenshot demonstrating that Gitlab was not caching](/img/20210421/asset-cache-comparison.png)
 
 Another thing I want to note is that the size of the Gitlab website is 11.2 KB
 smaller than the Github one.  I'm guessing this is because the Github website
 is only using Gzip compression and not Brotli.  I was able to confirm Github
 doesn't automatically add Brotli compression with KeyCDN's [Brotli Test](https://tools.keycdn.com/brotli-test) tool:
 
-![](/img/20210420/github-brotli-test.png)
+![Screenshot of Brotli test](/img/20210421/github-brotli-test.png)
 
 ## PageSpeed Insights
 
 Last but not least, we have PageSpeed Insights.  I performed an analysis on the
 mobile versions of the Github and Gitlab site:
 
-![](/img/20210420/pagespeed-insights.png)
-![](/img/20210420/pagespeed-insights-lab-data.png)
+![](/img/20210421/pagespeed-insights.png)
+![](/img/20210421/pagespeed-insights-lab-data.png)
 
 Turns out, Google doesn't rate these too differently. I thought the large speed
 differences I found in KeyCDN would have reflected greater in the PageSpeed
