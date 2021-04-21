@@ -8,7 +8,7 @@ Evan Goad
 on
 Tuesday, April 20, 2021</span></div></div></div></div></header><article><div class=container><div class=row><div class="col-lg-11 col-lg-offset-1
 col-md-10 col-md-offset-1
-post-container"><h1 id=a-little-history>A Little History</h1><p>A lot has changed since GitHub Pages <a href=https://github.blog/2008-12-18-github-pages/>first released in
+post-container"><h1 id=a-little-history>A Little History:</h1><p>A lot has changed since GitHub Pages <a href=https://github.blog/2008-12-18-github-pages/>first released in
 2008</a>. It began as a simple and
 free way to host a personal blog, and documentation for your open source
 projects. Now Github Pages is used by huge companies like <a href=https://github.com/collections/github-pages-examples>Twitter, Facebook,
@@ -36,8 +36,7 @@ differences there were between Github Pages and Gitlab Pages, or if there were
 any.</p><h1 id=chosing-my-next-ssg>Chosing My Next SSG</h1><p>I started my <a href=evangoad.github.io>evangoad.github.io</a> project using Jekyll in
 2015, as my first experience trying out an SSG. Now I&rsquo;m intersted in looking
 at other SSGs, one that fits best with my goal of comparing Github Pages and
-Gitlab Pages performance. My criteria for this SSG was:</p><ol><li>Builds fast</li><li>Low effort to setup on the host platform</li><li>Hosted site recieves good grades in web performance tools (I will be using
-<a href=yellowlab.tools>yellowlab.tools</a>)</li></ol><p>So I went to <a href=jamstack.org/generators>jamstack.org/generators</a> to see what the
+Gitlab Pages performance. My criteria for this SSG was:</p><ol><li>Builds fast</li><li>Low effort to setup on the host platform</li><li>Hosted site recieves good grades in web performance tools</li></ol><p>So I went to <a href=jamstack.org/generators>jamstack.org/generators</a> to see what the
 popular SSGs are at the moment:</p><p><img src=/img/20210420/jamstack-generators.png alt="Image of Generators listed at jamstack.org listed in order of popularity:
 Next.js, Hugo, Gatsby, Jekyll, Nuxt,
 Hexo"></p><p><a href=https://gohugo.io/>Hugo</a> immediately stuck out to me in the sea of
@@ -54,15 +53,16 @@ about criteria #3 for now.</p><h1 id=switching-from-jekyll-to-hugo>Switching fro
 been relying on simple markdown for your content, it theoretically should be
 easy to port your existing site over. I, on the other hand, had no content on
 previous blog that I wished to preserve. So instead, I opted to delete the
-project in <a href=https://github.com/evangoad/evangoad.github.io/commit/40632008af8265d8e82bf9e087b84e5be1eb9779>this commit</a>, so that I may start completely new.</p><p>I followed Hugo&rsquo;s official <a href=https://gohugo.io/getting-started/quick-start/>Quick
-Start</a> document as I build my
+project in <a href=https://github.com/evangoad/evangoad.github.io/commit/40632008af8265d8e82bf9e087b84e5be1eb9779>this commit</a>, so that I may start completely new. Then I followed Hugo&rsquo;s official <a href=https://gohugo.io/getting-started/quick-start/>Quick
+Start</a> document as I built my
 new site in the existing evangoad.github.io repository.</p><p>First I install the hugo tool with brew:</p><div class=highlight><pre style=color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-shell data-lang=shell>$ brew install hugo
-</code></pre></div><p>I had to use the <code>--force</code> option because this wasn&rsquo;t an empty directory.</p><div class=highlight><pre style=color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-shell data-lang=shell>$ hugo new site . --force
+</code></pre></div><p>Then create a new site. I had to use the <code>--force</code> option because this wasn&rsquo;t an empty directory.</p><div class=highlight><pre style=color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-shell data-lang=shell>$ hugo new site . --force
 </code></pre></div><p>I looked for a theme on <a href=https://themes.gohugo.io/>themes.gohugo.io</a>, and I
 really like this
 <a href=content/post/building-the-exact-same-hugo-blog-on-gitlab-and-github.md>hugo-theme-cleanwhite</a>
 created for the personal blog <a href=https://zhaohuabing.com>https://zhaohuabing.com</a></p><p><img src=/img/20210420/theme-example.png alt="Screenshot of the example website"></p><p>Looks great! I had the option of copying the theme&rsquo;s files directly to my repository, or using a submodule. I went with the submodule:</p><div class=highlight><pre style=color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-shell data-lang=shell>$ git submodule add https://github.com/zhaohuabing/hugo-theme-cleanwhite.git themes/hugo-theme-cleanwhite
-</code></pre></div><p>Referencing the <code>config.toml</code> from the theme&rsquo;s example site, I was able to create my own file:</p><div class=highlight><pre style=color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-toml data-lang=toml>baseURL = <span style=color:#f1fa8c>&#34;example.org&#34;</span>
+</code></pre></div><p>Referencing the <code>config.toml</code> from the theme&rsquo;s example site, I was able to
+create my own file:</p><div class=highlight><pre style=color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-toml data-lang=toml>baseURL = <span style=color:#f1fa8c>&#34;example.org&#34;</span>
 languageCode = <span style=color:#f1fa8c>&#34;en-us&#34;</span>
 title = <span style=color:#f1fa8c>&#34;Evan Goad&#34;</span>
 theme = <span style=color:#f1fa8c>&#34;hugo-theme-cleanwhite&#34;</span>
@@ -129,14 +129,32 @@ to do is create a single workflow file:</p><div class=highlight><pre style=color
         <span style=color:#ff79c6>with</span>:
           <span style=color:#ff79c6>github_token</span>: ${{ secrets.GITHUB_TOKEN }}
           <span style=color:#ff79c6>publish_dir</span>: ./public
-</code></pre></div><p>And that&rsquo;s it! I&rsquo;m ready to test a Github Actions deployment. All I changed
-from their example was the build branch <code>hugo_transition</code>. Apparently the <code>secrets.GITHUB_TOKEN</code> is always available in Github Actions. This token is used to commit a built version of the Hugo site in a branch called <code>gh-pages</code>. In the github repo settings, I changed the branch Github Pages was looking at from <code>main</code> to <code>gh-pages</code>.</p><p>At this
-point, I decide to <a href=https://github.com/evangoad/evangoad.github.io/commit/0dadfc37fefb60161d2554f3e6bc3a56f958b9ba#diff-28043ff911f28a5cb5742f7638363546311225a63eabc365af5356c70d4deb77>commit my
+</code></pre></div><p>And that&rsquo;s it! I&rsquo;m ready to test a Github Actions deployment. The only thing I
+changed from their example was the build branch <code>hugo_transition</code>. Apparently
+<code>secrets.GITHUB_TOKEN</code> is always available in Github Actions. This token
+is used to commit a built version of the Hugo site in a branch called
+<code>gh-pages</code>. In the repository settings page on Github, I changed the branch
+Github Pages was looking at from <code>main</code> to <code>gh-pages</code>.</p><p>At this point, I <a href=https://github.com/evangoad/evangoad.github.io/commit/0dadfc37fefb60161d2554f3e6bc3a56f958b9ba#diff-28043ff911f28a5cb5742f7638363546311225a63eabc365af5356c70d4deb77>commit my
 changes</a>
 and I push them to my repository in order to test the deployment.</p><p><img src=/img/20210420/github-action-failure.png alt="Screenshot of my firt Github Action run failing"></p><p>Oh no! It failed! I&rsquo;m still not sure why, but the build is not working on this
 specific part of the theme. Luckily for me, I selected a theme where the
 author specifically states he &ldquo;tried to make every part of the template as a
-replaceable partial html&rdquo;. This means I can copy just copy the footer template and comment out the <code>async</code> calls that were bugging out. I pushed that change in <a href=https://github.com/evangoad/evangoad.github.io/commit/3df21db92dec56ae520b8c64977b1d3f2e490c78>this commit</a></p><p><img src=/img/20210420/github-action-success.png alt="Screenshot of my first successful Github Action run"></p><p>Success! And look at how short that deploy action was, just 12 seconds. I checked evangoad.github.io and my static website was up and running. I quickly realiezed I had to remove a <a href=https://github.com/evangoad/evangoad.github.io/commit/cbe9a8bd7975098d4a96ad0dd9cbeadfc5646629>reference to example.org</a> in my config.toml file so my links could work (did you catch that earlier in the blog?)</p><p>After that, I merged my changes into the <code>main</code> branch and I was done with my first provider</p><h1 id=setting-up-gitlab>Setting up Gitlab</h1><p>I actually had to sign up with Gitlab and do the whole ssh key song and dance first. Once I created a repo, I copied all the files from my Github project except for the <code>.github/workflows/gh-pages.yml</code>. Did a quick test with <code>hugo server -D</code> to make sure I copied everything I needed, and then <a href=https://gitlab.com/evangoad/evangoad.gitlab.io/-/commit/4cf3dd9e15d38a93a53f599596b0cb649cffb1ce>committed those changes</a>.</p><p>Now it&rsquo;s time to see what the Gitlab CI/CD config is like. According to the <a href=https://gohugo.io/hosting-and-deployment/hosting-on-gitlab/>official Hugo documentation</a> I&rsquo;m going to have to&mldr; copy an even smaller config file!!</p><div class=highlight><pre style=color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-yaml data-lang=yaml><span style=color:#ff79c6>image</span>: registry.gitlab.com/pages/hugo:latest
+replaceable partial html&rdquo;. This means I can copy just copy the footer template
+and comment out the <code>async</code> calls that were bugging out. I pushed that change
+in <a href=https://github.com/evangoad/evangoad.github.io/commit/3df21db92dec56ae520b8c64977b1d3f2e490c78>this
+commit</a></p><p><img src=/img/20210420/github-action-success.png alt="Screenshot of my first successful Github Action run"></p><p>Success! And look at how short that deploy action was, just 12 seconds. I
+checked evangoad.github.io and my static website was up and running. I quickly
+realiezed I had to remove a <a href=https://github.com/evangoad/evangoad.github.io/commit/cbe9a8bd7975098d4a96ad0dd9cbeadfc5646629>reference to
+example.org</a>
+in my config.toml file so my links could work (did you catch that earlier in
+the blog?)</p><p>After that, I merged my changes into the <code>main</code> branch and I was done with my
+first provider</p><h1 id=setting-up-gitlab>Setting up Gitlab</h1><p>I actually had to sign up with Gitlab and do the whole ssh key song and dance
+first. Once I created a repo, I copied all the files from my Github project
+except for the <code>.github/workflows/gh-pages.yml</code>. Did a quick test with <code>hugo server -D</code> to make sure I copied everything I needed, and then <a href=https://gitlab.com/evangoad/evangoad.gitlab.io/-/commit/4cf3dd9e15d38a93a53f599596b0cb649cffb1ce>committed those
+changes</a>.</p><p>Now it&rsquo;s time to see what the Gitlab CI/CD config is like. According to the
+<a href=https://gohugo.io/hosting-and-deployment/hosting-on-gitlab/>official Hugo
+documentation</a> I&rsquo;m
+going to have to&mldr; copy an even smaller config file!!</p><div class=highlight><pre style=color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-yaml data-lang=yaml><span style=color:#ff79c6>image</span>: registry.gitlab.com/pages/hugo:latest
 
 <span style=color:#ff79c6>variables</span>:
   <span style=color:#ff79c6>GIT_SUBMODULE_STRATEGY</span>: recursive
@@ -149,7 +167,101 @@ replaceable partial html&rdquo;. This means I can copy just copy the footer temp
     - public
   <span style=color:#ff79c6>only</span>:
   - copy-hugo
-</code></pre></div><p>I was really impressed with how simple and straightforward this config is. I was able to get a working build on evangoad.gitlab.io with <a href=https://gitlab.com/evangoad/evangoad.gitlab.io/-/commit/b6956f6bc1fa8003009f58d16d7b934e4ebd1655>this commit</a>.</p><p><img src=/img/20210420/gitlab-success.png alt="Screenshot of successful deploy on Gitlab"></p><p>Another very fast build at 21 seconds. I am very happy to discover that Hugo builds extremely fast on both Github and Gitlab. They have both exceeded my expectations for criteria #1 and #2</p><p>For clean up, I had to change the deploy branch to <code>main</code> from <code>copy-hugo</code> as well as a reference to my github site in <a href=https://gitlab.com/evangoad/evangoad.gitlab.io/-/commit/a900d237a03ef4c6c782625725da26d4cd48472a>this commit</a>. I added the <code>--minify</code> arg in a <a href=https://gitlab.com/evangoad/evangoad.gitlab.io/-/commit/cbda056c66c35385b6cc00559d78c7738da472f3>later commit</a> to make it identical to the Github config.</p><h1 id=perf-testing-with-yellowlabtools>Perf testing with YellowLab.tools</h1><p>So now that I had two identical blogs up at evangoad.github.io and evangoad.gitlab.io, I can finally address criteria #3 and use some front end performance tools. I found yellowlab.tools when I was first learning about front end perf. It has a great checklist of items, and has been particularly useful for checking the image asset load.</p><p>However, this will be testing the theme as much it will be testing my image content. So it&rsquo;s good idea to run the original theme (<a href=https://zhaohuabing.com/>https://zhaohuabing.com/</a>) through the tools first to get a baseline grade:</p><p><img src=/img/20210420/theme-grade.png alt="Screentshot of zhaohuabing.com&amp;rsquo;s score, a 95 out of 100"></p><p>A 95 out of 100 is great. That screenshot is only a small portion of the information we recieve. In the rest of the report there are only a handful issues about jquery, old css prefixes, and color complexity.</p><p>So now lets run the same command for Github:</p><h1 id=fixing-the-compression-difference>Fixing the Compression difference</h1><p>I do a little research and came across this article called <a href=https://blog.ideotec.es/support-compression-gitlab-pages/>&ldquo;Support Compression in GitLab Pages&rdquo;</a>. Apparently, Gitlab is just not</p><hr><ul class=pager></ul><div id=disqus-comment></div></div><div class="col-lg-11 col-lg-offset-1
+</code></pre></div><p>I was really impressed with how simple and straightforward this config is. I
+was able to get a working build on evangoad.gitlab.io with <a href=https://gitlab.com/evangoad/evangoad.gitlab.io/-/commit/b6956f6bc1fa8003009f58d16d7b934e4ebd1655>this
+commit</a>.</p><p><img src=/img/20210420/gitlab-success.png alt="Screenshot of successful deploy on Gitlab"></p><p>Another very fast build at 21 seconds. I am very happy to discover that Hugo
+builds extremely fast on both Github and Gitlab. They have both exceeded my
+expectations for criteria #1 and #2</p><p>For clean up, I had to change the deploy branch to <code>main</code> from <code>copy-hugo</code> as
+well as a reference to my github site in <a href=https://gitlab.com/evangoad/evangoad.gitlab.io/-/commit/a900d237a03ef4c6c782625725da26d4cd48472a>this
+commit</a>.
+I added the <code>--minify</code> arg in a <a href=https://gitlab.com/evangoad/evangoad.gitlab.io/-/commit/cbda056c66c35385b6cc00559d78c7738da472f3>later
+commit</a>
+to make it identical to the Github config.</p><h1 id=performance-testing>Performance testing</h1><p>The Hugo blog is up and running on <a href=https://evangoad.github.io>https://evangoad.github.io</a> and
+<a href=https://evangoad.gitlab.io>https://evangoad.gitlab.io</a>. and I can finally do some performance testing! I
+did not know what the best tools were for testing static website performance,
+so I did a little spelunking. Here&rsquo;s the tools I settled on:</p><ol><li><a href=https://yellowlab.tools>Yellowlab.tools</a></li><li><a href=https://tools.keycdn.com>KeyCDN Tools</a></li><li><a href=https://developers.google.com/speed/pagespeed/insights/>PageSpeed Insights</a></li></ol><p>PageSpeed Insights is the super dominant tool when it comes to perfomance
+testing, so I feel a bit obligated to include it here. Yellowlab.tools has
+been maintained by Gaël Métais since 2014, and just saw the release of <a href=https://letstalkaboutwebperf.com/en/yellow-lab-tools-v2-is-out/>version
+2.0 in
+February</a>. He
+describes it as a complimentary tool to Insights as they don&rsquo;t audit the same
+issues. I think KeyCDN is a good addition as well, since this gives me global
+web performance averages, as well as a convenient speed test tool.</p><h2 id=yellowlabtools>Yellowlab.tools</h2><p>I start with Yellowlab.tools since this an analysis of assets themselves, and
+not how they are transported or cached. I wanted to make sure that the content
+I was serving was a similar as possible, so I could isolate the differnces
+between the two services. First, I check the grade for the original theme
+(<a href=https://zhaohuabing.com/>https://zhaohuabing.com/</a>) to set a baseline of expectations:</p><p><img src=/img/20210420/theme-grade.png alt="Screentshot of zhaohuabing.com&amp;rsquo;s score, a 95 out of 100"></p><p>95 out of 100 criteria are met! That screenshot is only a small portion of the information we
+recieve. In the rest of the report there are only a handful issues about
+jquery, old css prefixes, and color complexity.</p><p>So now lets run the same command for Github:</p><p><img src=/img/20210420/github-grade.png alt="Screenshot of my github website&amp;rsquo;s score, a 94 out of 100"></p><p>94 out of 100! The only regression here is related to an unused font-awesome
+asset, so I am going to ignore it for now.</p><p>Now let&rsquo;s see how the Gitlab site is fairing:</p><p><img src=/img/20210420/gitlab-bad-grade.png alt="Screenshot of my gitlab website&amp;rsquo;s score, a 91 out of 100"></p><p>Yikes! There is a clear difference here when it comes to compression of
+assets. I searched for guidance around compression and Gitlab Pages, and came
+across this article called <a href=https://blog.ideotec.es/support-compression-gitlab-pages/>&ldquo;Support Compression in GitLab
+Pages&rdquo;</a>.
+Apparently, Gitlab is not taking this compression step for us, while Github is
+adding either gzip or brotli compression automatically. The blog describes a
+way we can add a compression step to the Gitlab CI build script, so now the
+build script looks like this:</p><div class=highlight><pre style=color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-yaml data-lang=yaml><span style=color:#ff79c6>image</span>:
+  <span style=color:#ff79c6>name</span>: klakegg/hugo:alpine
+  <span style=color:#ff79c6>entrypoint</span>: [<span style=color:#f1fa8c>&#34;&#34;</span>]
+
+<span style=color:#ff79c6>before_script</span>:
+ - apk update
+ - apk add brotli
+
+<span style=color:#ff79c6>variables</span>:
+  <span style=color:#ff79c6>GIT_SUBMODULE_STRATEGY</span>: recursive
+
+<span style=color:#ff79c6>pages</span>:
+  <span style=color:#ff79c6>script</span>:
+  - hugo --minify
+  - gzip -k -9 $(find public -iname &#39;*.html&#39; -o -iname &#39;*.css&#39; -o -iname &#39;*.js&#39; -o -iname &#39;*.xml&#39;)
+  - brotli -Z $(find public -iname &#39;*.html&#39; -o -iname &#39;*.css&#39; -o -iname &#39;*.js&#39; -o -iname &#39;*.xml&#39;)
+  <span style=color:#ff79c6>artifacts</span>:
+    <span style=color:#ff79c6>paths</span>:
+    - public
+  <span style=color:#ff79c6>only</span>:
+  - main
+</code></pre></div><p>Always happy to switch to an alpine image! <a href=https://gitlab.com/evangoad/evangoad.gitlab.io/-/pipelines/290102416/builds>The deploy</a> only took 29 seconds,
+and after running Yellowlab.tools again:</p><p><img src=/img/20210420/gitlab-better-grade.png alt></p><p>Hooray! Now Github and Gitlab have identical scores. I am satisfied with how
+my content is generated, now it&rsquo;s time to do some speed tests.</p><h2 id=keycdn>KeyCDN</h2><p>The KeyCDN Tools page has a lot of useful way for testing speed. The first I
+want to look at is their <a href=https://tools.keycdn.com/performance>Performance
+Test</a>. This allows you to test DNS,
+Connect, TLS, and even TTFB from multiple locations. This is particularly
+helpful for understanding the general latency that is going to be present, and
+how it deviates per region. Here are the results for both the github site and
+the gilab site:</p><p><img src=/img/20210420/keycdn-github-perf.png alt>
+<img src=/img/20210420/keycdn-gitlab-perf.png alt></p><p>As you can see, Github is outperforming Gitlab in every category here. I&rsquo;m not
+sure why this is the case, but it definitely shows that Github has won round 1
+of the speed test. The Performance test is only measuring initial network
+responses, so we have no idea how fast the assets are moving at this point.</p><p>In order to do that, we&rsquo;ll take a look at some old fashioned speed tests! This
+<a href=https://tools.keycdn.com/speed>Website Speed Test</a> measures the total amount
+of time it takes for a web page to finish loading, assets included. It has a
+sample size of 15, so you are really testing the speed of the page when it
+should be cached.</p><p><img src=/img/20210420/keycdn-github-speed.png alt>
+<img src=/img/20210420/keycdn-gitlab-speed.png alt></p><p>The Gitlab website is twice as slow as the Github website. I was noticing this
+too when I was browsing my sites in firefox. The Github hosted one felt
+noticeably snappier, so I took a look at the network tab. And what I found is
+that Gitlab is basically never caching the assets! No wonder it is taking so
+much long than Github, which is again, doing something automatically for us.</p><p><img src=/img/20210420/asset-cache-comparison.png alt></p><p>Another thing I want to note is that the size of the Gitlab website is 11.2 KB
+smaller than the Github one. I&rsquo;m guessing this is because the Github website
+is only using Gzip compression and not Brotli. I was able to confirm Github
+doesn&rsquo;t automatically add Brotli compression with KeyCDN&rsquo;s <a href=https://tools.keycdn.com/brotli-test>Brotli Test</a> tool:</p><p><img src=/img/20210420/github-brotli-test.png alt></p><h2 id=pagespeed-insights>PageSpeed Insights</h2><p>Last but not least, we have PageSpeed Insights. I performed an analysis on the
+mobile versions of the Github and Gitlab site:</p><p><img src=/img/20210420/pagespeed-insights.png alt>
+<img src=/img/20210420/pagespeed-insights-lab-data.png alt></p><p>Turns out, Google doesn&rsquo;t rate these too differently. I thought the large speed
+differences I found in KeyCDN would have reflected greater in the PageSpeed
+Insights results. I have to admit to not having any experience with PageSpeed
+Insights before, so I don&rsquo;t really know what goes into a &ldquo;Speed Index&rdquo; or a
+&ldquo;First Contentful Paint&rdquo;. But I do know that we are testing beyond just
+response times now. I imagine that a &ldquo;paint&rdquo; requires the html, then the
+assets, and then a browser to render the asset. The Github website
+consistently scores higher than Gitlab in this test, showing a strong
+indication that the user experience is going to be best on Github.</p><h1 id=conclusion>Conclusion</h1><p>I am so happy that I have switched to Hugo. The build times are blazing fast
+on my local machine, as well as Github/Gitlab CI. When it comes to hosting,
+Github clearly has a bit of an edge with the automatic compression and caching
+of assets. However, both take very little time to setup, and aren&rsquo;t too
+different by some performance measures.</p><p>Going forward I&rsquo;m interested in learning more about the Hugo theme I&rsquo;m using,
+and ways it could be optimized for performance. It might be fun to test Github
+Pages against another competitor like Netlify in the future.</p><hr><ul class=pager></ul><div id=disqus-comment></div></div><div class="col-lg-11 col-lg-offset-1
 col-md-10 col-md-offset-1
 sidebar-container"></div></div></div></article><footer><div class=container><div class=row><div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1"><ul class="list-inline text-center"><li><a target=_blank href=https://github.com/evangoad><span class="fa-stack fa-lg"><i class="fas fa-circle fa-stack-2x"></i>
 <i class="fab fa-github fa-stack-1x fa-inverse"></i></span></a></li><li><a target=_blank href=https://www.linkedin.com/in/evangoad><span class="fa-stack fa-lg"><i class="fas fa-circle fa-stack-2x"></i>
