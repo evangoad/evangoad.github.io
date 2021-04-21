@@ -1,0 +1,157 @@
+<!doctype html><html lang=en-us><head><meta charset=utf-8><meta http-equiv=x-ua-compatible content="IE=edge"><meta name=viewport content="width=device-width,initial-scale=1"><meta property="og:site_name" content="Evan Goad"><meta property="og:type" content="article"><meta property="og:image" content="http://evangoad.github.io//img/flowers.jpg"><meta property="twitter:image" content="http://evangoad.github.io//img/flowers.jpg"><meta name=title content="Comparing Hugo performance on Github and Gitlab"><meta property="og:title" content="Comparing Hugo performance on Github and Gitlab"><meta property="twitter:title" content="Comparing Hugo performance on Github and Gitlab"><meta name=description content><meta property="og:description" content><meta property="twitter:description" content><meta property="twitter:card" content="summary"><meta name=keyword content><link rel="shortcut icon" href=/img/favicon.ico><title>Comparing Hugo performance on Github and Gitlab-</title><link rel=canonical href=/2021/04/20/comparing-hugo-performance-on-github-and-gitlab><link rel=stylesheet href=/css/iDisqus.min.css><link rel=stylesheet href=/css/bootstrap.min.css><link rel=stylesheet href=/css/hux-blog.min.css><link rel=stylesheet href=/css/zanshang.css><link href=//cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.1/css/all.min.css rel=stylesheet type=text/css><script src=/js/jquery.min.js></script><script src=/js/bootstrap.min.js></script><script src=/js/hux-blog.min.js></script></head><nav class="navbar navbar-default navbar-custom navbar-fixed-top"><div class=container-fluid><div class="navbar-header page-scroll"><button type=button class=navbar-toggle>
+<span class=sr-only>Toggle navigation</span>
+<span class=icon-bar></span><span class=icon-bar></span><span class=icon-bar></span></button>
+<a class=navbar-brand href=/>Evan Goad</a></div><div id=huxblog_navbar><div class=navbar-collapse><ul class="nav navbar-nav navbar-right"><li><a href=/>Home</a></li><li><a href=/top/about/>ABOUT</a></li></ul></div></div></div></nav><script>var $body=document.body,$toggle=document.querySelector('.navbar-toggle'),$navbar=document.querySelector('#huxblog_navbar'),$collapse=document.querySelector('.navbar-collapse');$toggle.addEventListener('click',handleMagic);function handleMagic(a){$navbar.className.indexOf('in')>0?($navbar.className=" ",setTimeout(function(){$navbar.className.indexOf('in')<0&&($collapse.style.height="0px")},400)):($collapse.style.height="auto",$navbar.className+=" in")}</script><style type=text/css>header.intro-header{background-image:url(/img/flowers.jpg)}</style><header class=intro-header><div class=container><div class=row><div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1"><div class=post-heading><div class=tags><a class=tag href=/tags/hugo title=Hugo>Hugo</a>
+<a class=tag href=/tags/gitlab title=Gitlab>Gitlab</a>
+<a class=tag href=/tags/github title=Github>Github</a></div><h1>Comparing Hugo performance on Github and Gitlab</h1><h2 class=subheading></h2><span class=meta>Posted by
+Evan Goad
+on
+Tuesday, April 20, 2021</span></div></div></div></div></header><article><div class=container><div class=row><div class="col-lg-11 col-lg-offset-1
+col-md-10 col-md-offset-1
+post-container"><h1 id=a-little-history>A Little History</h1><p>A lot has changed since GitHub Pages <a href=https://github.blog/2008-12-18-github-pages/>first released in
+2008</a>. It began as a simple and
+free way to host a personal blog, and documentation for your open source
+projects. Now Github Pages is used by huge companies like <a href=https://github.com/collections/github-pages-examples>Twitter, Facebook,
+and Netflix</a>, and hosts
+large open source projects like <a href=electronjs.org>electronjs.org</a> and
+<a href=jekyllrb.com>jekyllrb.com</a>.</p><p>Jekyll, to this day, is still the static site generator (SSG) recommeded and
+documented for github pages. They have always supported static html content,
+so technically any SSG was supported from the beginning. But only Jekyll would
+automatically perform the build step in a behind the scenes CI/CD process.
+This was very appealing to many people without much CI/CD experience like me.
+You could do extra work if you wanted to replicate this behavior with other
+SSGs. There are some older blogs out there about using git hooks, or Travis CI
+credits for your Github Pages deploy.</p><p>Fast forward to 2015 and <a href=https://about.gitlab.com/releases/2015/12/22/gitlab-8-3-released/>Gitlab
+announces</a>
+it&rsquo;s enterprise edition would be getting a feature called Gitlab Pages, and by
+the next year it was available to everyone. In their <a href=https://about.gitlab.com/blog/2016/04/07/gitlab-pages-setup/#gitlab-ci>introductory blog
+post</a>,
+they lay out specific instructions not just for Jekyll, but for Hexo as well.
+They leverage their in house CI/CD system in order to support a flexible build
+system for SSGs. Github would follow this up shortly with <a href=https://github.blog/2018-10-17-action-demos/>Github Actions in
+2018</a>, which really opened doors
+for SSG convenience. Now you could share open source CI/CD configuration in
+Github, making all other SSGs just as convenient as the Jekyll option.</p><p>With all these advancements in SSGs, I began wondering what significant
+differences there were between Github Pages and Gitlab Pages, or if there were
+any.</p><h1 id=chosing-my-next-ssg>Chosing My Next SSG</h1><p>I started my <a href=evangoad.github.io>evangoad.github.io</a> project using Jekyll in
+2015, as my first experience trying out an SSG. Now I&rsquo;m intersted in looking
+at other SSGs, one that fits best with my goal of comparing Github Pages and
+Gitlab Pages performance. My criteria for this SSG was:</p><ol><li>Builds fast</li><li>Low effort to setup on the host platform</li><li>Hosted site recieves good grades in web performance tools (I will be using
+<a href=yellowlab.tools>yellowlab.tools</a>)</li></ol><p>So I went to <a href=jamstack.org/generators>jamstack.org/generators</a> to see what the
+popular SSGs are at the moment:</p><p><img src=/img/20210420/jamstack-generators.png alt="Image of Generators listed at jamstack.org listed in order of popularity:
+Next.js, Hugo, Gatsby, Jekyll, Nuxt,
+Hexo"></p><p><a href=https://gohugo.io/>Hugo</a> immediately stuck out to me in the sea of
+javascript, ruby, and python solutions. Everybody tells me this Go language is
+crazy fast, and Hugo is self described as &ldquo;The world’s fastest framework for
+building websites&rdquo; in it&rsquo;s <a href=https://github.com/gohugoio/hugo>Github project</a>.
+It must build fast!</p><p>But is Hugo going to be low effort to setup on Github and Gitlab? Turns out
+that Hugo has fantastic documentation site, and official documentation for both
+<a href=https://gohugo.io/hosting-and-deployment/hosting-on-github/>Github Pages</a> and
+<a href=https://gohugo.io/hosting-and-deployment/hosting-on-gitlab/>Gitlab Pages</a>.</p><p><img src=/img/20210420/hugo-docs-support.png alt="Screenshot of both the Github and Gitlab documentation
+pages"></p><p>This is great! I have met the criteria for #1 and #2 so far. I won&rsquo;t be able
+to test the performance until I am hosted on Github and Gitlab, so we&rsquo;ll forget
+about criteria #3 for now.</p><h1 id=switching-from-jekyll-to-hugo>Switching from Jekyll to Hugo</h1><p>I don&rsquo;t have any advice here when it comes to preserving content. If you have
+been relying on simple markdown for your content, it theoretically should be
+easy to port your existing site over. I, on the other hand, had no content on
+previous blog that I wished to preserve. So instead, I opted to delete the
+project in <a href=https://github.com/evangoad/evangoad.github.io/commit/40632008af8265d8e82bf9e087b84e5be1eb9779>this commit</a>, so that I may start completely new.</p><p>I followed Hugo&rsquo;s official <a href=https://gohugo.io/getting-started/quick-start/>Quick
+Start</a> document as I build my
+new site in the existing evangoad.github.io repository.</p><p>First I install the hugo tool with brew:</p><div class=highlight><pre style=color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-shell data-lang=shell>$ brew install hugo
+</code></pre></div><p>I had to use the <code>--force</code> option because this wasn&rsquo;t an empty directory.</p><div class=highlight><pre style=color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-shell data-lang=shell>$ hugo new site . --force
+</code></pre></div><p>I looked for a theme on <a href=https://themes.gohugo.io/>themes.gohugo.io</a>, and I
+really like this
+<a href=content/post/building-the-exact-same-hugo-blog-on-gitlab-and-github.md>hugo-theme-cleanwhite</a>
+created for the personal blog <a href=https://zhaohuabing.com>https://zhaohuabing.com</a></p><p><img src=/img/20210420/theme-example.png alt="Screenshot of the example website"></p><p>Looks great! I had the option of copying the theme&rsquo;s files directly to my repository, or using a submodule. I went with the submodule:</p><div class=highlight><pre style=color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-shell data-lang=shell>$ git submodule add https://github.com/zhaohuabing/hugo-theme-cleanwhite.git themes/hugo-theme-cleanwhite
+</code></pre></div><p>Referencing the <code>config.toml</code> from the theme&rsquo;s example site, I was able to create my own file:</p><div class=highlight><pre style=color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-toml data-lang=toml>baseURL = <span style=color:#f1fa8c>&#34;example.org&#34;</span>
+languageCode = <span style=color:#f1fa8c>&#34;en-us&#34;</span>
+title = <span style=color:#f1fa8c>&#34;Evan Goad&#34;</span>
+theme = <span style=color:#f1fa8c>&#34;hugo-theme-cleanwhite&#34;</span>
+paginate = <span style=color:#bd93f9>5</span> <span style=color:#6272a4>#frontpage pagination</span>
+preserveTaxonomyNames = <span style=color:#ff79c6>true</span>
+
+[outputs]
+home = [<span style=color:#f1fa8c>&#34;HTML&#34;</span>, <span style=color:#f1fa8c>&#34;RSS&#34;</span>]
+
+[params]
+  header_image = <span style=color:#f1fa8c>&#34;img/flowers.jpg&#34;</span>
+  about_me = <span style=color:#ff79c6>true</span>
+  sidebar_about_description = <span style=color:#f1fa8c>&#34;Software Developer, Full Stack and Site Reliability&#34;</span>
+  sidebar_avatar = <span style=color:#f1fa8c>&#34;img/profile.jpg&#34;</span>
+  featured_tags = <span style=color:#ff79c6>false</span>
+  showtoc = <span style=color:#ff79c6>false</span>
+
+[params.social]
+  linkedin = <span style=color:#f1fa8c>&#34;https://www.linkedin.com/in/evangoad&#34;</span>
+  github = <span style=color:#f1fa8c>&#34;https://github.com/evangoad&#34;</span>
+
+[[params.addtional_menus]]
+  title =  <span style=color:#f1fa8c>&#34;ABOUT&#34;</span>
+  href =  <span style=color:#f1fa8c>&#34;/top/about/&#34;</span>
+
+[markup]
+  [markup.highlight]
+    style = <span style=color:#f1fa8c>&#34;dracula&#34;</span>
+</code></pre></div><p>There&rsquo;s a lot in here, but basically I&rsquo;m using the configuration provided by
+both Hugo and the theme.</p><p>Next I generated a post:</p><div class=highlight><pre style=color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-shell data-lang=shell>$ mkdir post
+$ hugo new post/building-the-exact-same-hugo-blog-on-gitlab-and-github.md
+</code></pre></div><p>I filled that post with a little placeholder markdown content. I also uploaded
+some images to the <code>static/img</code> directory, and created a small about me page
+also with markdown content.</p><p>To test all of these changes locally, I run the server in draft mode:</p><div class=highlight><pre style=color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-shell data-lang=shell>$ hugo server -D
+</code></pre></div><p>Looks great to me locally! I decide I&rsquo;m ready to setup the Github Actions
+pipeline.</p><h1 id=setting-up-github-actions>Setting up Github Actions</h1><p>Reading the official Hugo documentation, I realize that all I&rsquo;m going to have
+to do is create a single workflow file:</p><div class=highlight><pre style=color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-yaml data-lang=yaml><span style=color:#ff79c6>name</span>: github pages
+
+<span style=color:#ff79c6>on</span>:
+  <span style=color:#ff79c6>push</span>:
+    <span style=color:#ff79c6>branches</span>:
+      - hugo_transition  <span style=color:#6272a4># Set a branch to deploy</span>
+
+<span style=color:#ff79c6>jobs</span>:
+  <span style=color:#ff79c6>deploy</span>:
+    <span style=color:#ff79c6>runs-on</span>: ubuntu-18.04
+    <span style=color:#ff79c6>steps</span>:
+      - <span style=color:#ff79c6>uses</span>: actions/checkout@v2
+        <span style=color:#ff79c6>with</span>:
+          <span style=color:#ff79c6>submodules</span>: <span style=color:#ff79c6>true</span>  <span style=color:#6272a4># Fetch Hugo themes (true OR recursive)</span>
+          <span style=color:#ff79c6>fetch-depth</span>: <span style=color:#bd93f9>0</span>    <span style=color:#6272a4># Fetch all history for .GitInfo and .Lastmod</span>
+
+      - <span style=color:#ff79c6>name</span>: Setup Hugo
+        <span style=color:#ff79c6>uses</span>: peaceiris/actions-hugo@v2
+        <span style=color:#ff79c6>with</span>:
+          <span style=color:#ff79c6>hugo-version</span>: <span style=color:#f1fa8c>&#39;latest&#39;</span>
+          <span style=color:#6272a4># extended: true</span>
+
+      - <span style=color:#ff79c6>name</span>: Build
+        <span style=color:#ff79c6>run</span>: hugo --minify
+
+      - <span style=color:#ff79c6>name</span>: Deploy
+        <span style=color:#ff79c6>uses</span>: peaceiris/actions-gh-pages@v3
+        <span style=color:#ff79c6>with</span>:
+          <span style=color:#ff79c6>github_token</span>: ${{ secrets.GITHUB_TOKEN }}
+          <span style=color:#ff79c6>publish_dir</span>: ./public
+</code></pre></div><p>And that&rsquo;s it! I&rsquo;m ready to test a Github Actions deployment. All I changed
+from their example was the build branch <code>hugo_transition</code>. Apparently the <code>secrets.GITHUB_TOKEN</code> is always available in Github Actions. This token is used to commit a built version of the Hugo site in a branch called <code>gh-pages</code>. In the github repo settings, I changed the branch Github Pages was looking at from <code>main</code> to <code>gh-pages</code>.</p><p>At this
+point, I decide to <a href=https://github.com/evangoad/evangoad.github.io/commit/0dadfc37fefb60161d2554f3e6bc3a56f958b9ba#diff-28043ff911f28a5cb5742f7638363546311225a63eabc365af5356c70d4deb77>commit my
+changes</a>
+and I push them to my repository in order to test the deployment.</p><p><img src=/img/20210420/github-action-failure.png alt="Screenshot of my firt Github Action run failing"></p><p>Oh no! It failed! I&rsquo;m still not sure why, but the build is not working on this
+specific part of the theme. Luckily for me, I selected a theme where the
+author specifically states he &ldquo;tried to make every part of the template as a
+replaceable partial html&rdquo;. This means I can copy just copy the footer template and comment out the <code>async</code> calls that were bugging out. I pushed that change in <a href=https://github.com/evangoad/evangoad.github.io/commit/3df21db92dec56ae520b8c64977b1d3f2e490c78>this commit</a></p><p><img src=/img/20210420/github-action-success.png alt="Screenshot of my first successful Github Action run"></p><p>Success! And look at how short that deploy action was, just 12 seconds. I checked evangoad.github.io and my static website was up and running. I quickly realiezed I had to remove a <a href=https://github.com/evangoad/evangoad.github.io/commit/cbe9a8bd7975098d4a96ad0dd9cbeadfc5646629>reference to example.org</a> in my config.toml file so my links could work (did you catch that earlier in the blog?)</p><p>After that, I merged my changes into the <code>main</code> branch and I was done with my first provider</p><h1 id=setting-up-gitlab>Setting up Gitlab</h1><p>I actually had to sign up with Gitlab and do the whole ssh key song and dance first. Once I created a repo, I copied all the files from my Github project except for the <code>.github/workflows/gh-pages.yml</code>. Did a quick test with <code>hugo server -D</code> to make sure I copied everything I needed, and then <a href=https://gitlab.com/evangoad/evangoad.gitlab.io/-/commit/4cf3dd9e15d38a93a53f599596b0cb649cffb1ce>committed those changes</a>.</p><p>Now it&rsquo;s time to see what the Gitlab CI/CD config is like. According to the <a href=https://gohugo.io/hosting-and-deployment/hosting-on-gitlab/>official Hugo documentation</a> I&rsquo;m going to have to&mldr; copy an even smaller config file!!</p><div class=highlight><pre style=color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-yaml data-lang=yaml><span style=color:#ff79c6>image</span>: registry.gitlab.com/pages/hugo:latest
+
+<span style=color:#ff79c6>variables</span>:
+  <span style=color:#ff79c6>GIT_SUBMODULE_STRATEGY</span>: recursive
+
+<span style=color:#ff79c6>pages</span>:
+  <span style=color:#ff79c6>script</span>:
+  - hugo
+  <span style=color:#ff79c6>artifacts</span>:
+    <span style=color:#ff79c6>paths</span>:
+    - public
+  <span style=color:#ff79c6>only</span>:
+  - copy-hugo
+</code></pre></div><p>I was really impressed with how simple and straightforward this config is. I was able to get a working build on evangoad.gitlab.io with <a href=https://gitlab.com/evangoad/evangoad.gitlab.io/-/commit/b6956f6bc1fa8003009f58d16d7b934e4ebd1655>this commit</a>.</p><p><img src=/img/20210420/gitlab-success.png alt="Screenshot of successful deploy on Gitlab"></p><p>Another very fast build at 21 seconds. I am very happy to discover that Hugo builds extremely fast on both Github and Gitlab. They have both exceeded my expectations for criteria #1 and #2</p><p>For clean up, I had to change the deploy branch to <code>main</code> from <code>copy-hugo</code> as well as a reference to my github site in <a href=https://gitlab.com/evangoad/evangoad.gitlab.io/-/commit/a900d237a03ef4c6c782625725da26d4cd48472a>this commit</a>. I added the <code>--minify</code> arg in a <a href=https://gitlab.com/evangoad/evangoad.gitlab.io/-/commit/cbda056c66c35385b6cc00559d78c7738da472f3>later commit</a> to make it identical to the Github config.</p><h1 id=perf-testing-with-yellowlabtools>Perf testing with YellowLab.tools</h1><p>So now that I had two identical blogs up at evangoad.github.io and evangoad.gitlab.io, I can finally address criteria #3 and use some front end performance tools. I found yellowlab.tools when I was first learning about front end perf. It has a great checklist of items, and has been particularly useful for checking the image asset load.</p><p>However, this will be testing the theme as much it will be testing my image content. So it&rsquo;s good idea to run the original theme (<a href=https://zhaohuabing.com/>https://zhaohuabing.com/</a>) through the tools first to get a baseline grade:</p><p><img src=/img/20210420/theme-grade.png alt="Screentshot of zhaohuabing.com&amp;rsquo;s score, a 95 out of 100"></p><p>A 95 out of 100 is great. That screenshot is only a small portion of the information we recieve. In the rest of the report there are only a handful issues about jquery, old css prefixes, and color complexity.</p><p>So now lets run the same command for Github:</p><h1 id=fixing-the-compression-difference>Fixing the Compression difference</h1><p>I do a little research and came across this article called <a href=https://blog.ideotec.es/support-compression-gitlab-pages/>&ldquo;Support Compression in GitLab Pages&rdquo;</a>. Apparently, Gitlab is just not</p><hr><ul class=pager></ul><div id=disqus-comment></div></div><div class="col-lg-11 col-lg-offset-1
+col-md-10 col-md-offset-1
+sidebar-container"></div></div></div></article><footer><div class=container><div class=row><div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1"><ul class="list-inline text-center"><li><a target=_blank href=https://github.com/evangoad><span class="fa-stack fa-lg"><i class="fas fa-circle fa-stack-2x"></i>
+<i class="fab fa-github fa-stack-1x fa-inverse"></i></span></a></li><li><a target=_blank href=https://www.linkedin.com/in/evangoad><span class="fa-stack fa-lg"><i class="fas fa-circle fa-stack-2x"></i>
+<i class="fab fa-linkedin fa-stack-1x fa-inverse"></i></span></a></li></ul><p class="copyright text-muted">Copyright &copy; Evan Goad 2021<br><a href=https://themes.gohugo.io/hugo-theme-cleanwhite>CleanWhite Hugo Theme</a> by <a href=https://zhaohuabing.com>Huabing</a> |
+<iframe style=margin-left:2px;margin-bottom:-5px frameborder=0 scrolling=0 width=100px height=20px src="https://ghbtns.com/github-btn.html?user=zhaohuabing&repo=hugo-theme-cleanwhite&type=star&count=true"></iframe></p></div></div></div></footer><script>function async(f,b){var c=document,d='script',a=c.createElement(d),e=c.getElementsByTagName(d)[0];a.src=f,b&&a.addEventListener('load',function(a){b(null,a)},!1),e.parentNode.insertBefore(a,e)}</script></body></html>
