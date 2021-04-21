@@ -4,6 +4,7 @@ date: 2021-04-21
 layout: post
 author: Evan Goad
 URL: 2021/04/21/comparing-hugo-performance-on-github-and-gitlab
+image: /img/20210421/flowerpair.jpg
 tags:
     - Hugo
     - Gitlab
