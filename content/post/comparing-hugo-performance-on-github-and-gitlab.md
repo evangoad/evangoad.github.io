@@ -18,8 +18,8 @@ A lot has changed since GitHub Pages [first released in
 free way to host a personal blog, and documentation for your open source
 projects.  Now Github Pages is used by huge companies like [Twitter, Facebook,
 and Netflix](https://github.com/collections/github-pages-examples), and hosts
-large open source projects like [electronjs.org](electronjs.org) and
-[jekyllrb.com](jekyllrb.com). 
+large open source projects like [electronjs.org](https://electronjs.org) and
+[jekyllrb.com](https://jekyllrb.com). 
 
 Jekyll, to this day, is still the static site generator (SSG) recommeded and
 documented for github pages.  They have always supported static html content,
@@ -48,7 +48,7 @@ any.
 
 # Chosing My Next SSG
 
-I started my [evangoad.github.io](evangoad.github.io) project using Jekyll in
+I started my [evangoad.github.io](https://evangoad.github.io) project using Jekyll in
 2015, as my first experience trying out an SSG.  Now I'm intersted in looking
 at other SSGs, one that fits best with my goal of comparing Github Pages and
 Gitlab Pages performance.  My criteria for this SSG was:
@@ -57,7 +57,7 @@ Gitlab Pages performance.  My criteria for this SSG was:
 2. Low effort to setup on the host platform
 3. Hosted site recieves good grades in web performance tools 
 
-So I went to [jamstack.org/generators](jamstack.org/generators) to see what the
+So I went to [jamstack.org/generators](https://jamstack.org/generators) to see what the
 popular SSGs are at the moment:
 
 ![Image of Generators listed at jamstack.org listed in order of popularity:
@@ -104,7 +104,7 @@ $ hugo new site . --force
 I looked for a theme on [themes.gohugo.io](https://themes.gohugo.io/), and I
 really like this
 [hugo-theme-cleanwhite](content/post/building-the-exact-same-hugo-blog-on-gitlab-and-github.md)
-created for the personal blog https://zhaohuabing.com
+created for the personal blog [zhaohuabing.com](https://zhaohuabing.com)
 
 ![Screenshot of the example website](/img/20210421/theme-example.png)
 
