@@ -13,8 +13,8 @@ post-container"><h1 id=a-little-history>A Little History:</h1><p>A lot has chang
 free way to host a personal blog, and documentation for your open source
 projects. Now Github Pages is used by huge companies like <a href=https://github.com/collections/github-pages-examples>Twitter, Facebook,
 and Netflix</a>, and hosts
-large open source projects like <a href=electronjs.org>electronjs.org</a> and
-<a href=jekyllrb.com>jekyllrb.com</a>.</p><p>Jekyll, to this day, is still the static site generator (SSG) recommeded and
+large open source projects like <a href=https://electronjs.org>electronjs.org</a> and
+<a href=https://jekyllrb.com>jekyllrb.com</a>.</p><p>Jekyll, to this day, is still the static site generator (SSG) recommeded and
 documented for github pages. They have always supported static html content,
 so technically any SSG was supported from the beginning. But only Jekyll would
 automatically perform the build step in a behind the scenes CI/CD process.
@@ -33,10 +33,10 @@ system for SSGs. Github would follow this up shortly with <a href=https://github
 for SSG convenience. Now you could share open source CI/CD configuration in
 Github, making all other SSGs just as convenient as the Jekyll option.</p><p>With all these advancements in SSGs, I began wondering what significant
 differences there were between Github Pages and Gitlab Pages, or if there were
-any.</p><h1 id=chosing-my-next-ssg>Chosing My Next SSG</h1><p>I started my <a href=evangoad.github.io>evangoad.github.io</a> project using Jekyll in
+any.</p><h1 id=chosing-my-next-ssg>Chosing My Next SSG</h1><p>I started my <a href=https://evangoad.github.io>evangoad.github.io</a> project using Jekyll in
 2015, as my first experience trying out an SSG. Now I&rsquo;m intersted in looking
 at other SSGs, one that fits best with my goal of comparing Github Pages and
-Gitlab Pages performance. My criteria for this SSG was:</p><ol><li>Builds fast</li><li>Low effort to setup on the host platform</li><li>Hosted site recieves good grades in web performance tools</li></ol><p>So I went to <a href=jamstack.org/generators>jamstack.org/generators</a> to see what the
+Gitlab Pages performance. My criteria for this SSG was:</p><ol><li>Builds fast</li><li>Low effort to setup on the host platform</li><li>Hosted site recieves good grades in web performance tools</li></ol><p>So I went to <a href=https://jamstack.org/generators>jamstack.org/generators</a> to see what the
 popular SSGs are at the moment:</p><p><img src=/img/20210421/jamstack-generators.png alt="Image of Generators listed at jamstack.org listed in order of popularity:
 Next.js, Hugo, Gatsby, Jekyll, Nuxt,
 Hexo"></p><p><a href=https://gohugo.io/>Hugo</a> immediately stuck out to me in the sea of
@@ -60,7 +60,7 @@ new site in the existing evangoad.github.io repository.</p><p>First I install th
 </code></pre></div><p>I looked for a theme on <a href=https://themes.gohugo.io/>themes.gohugo.io</a>, and I
 really like this
 <a href=content/post/building-the-exact-same-hugo-blog-on-gitlab-and-github.md>hugo-theme-cleanwhite</a>
-created for the personal blog <a href=https://zhaohuabing.com>https://zhaohuabing.com</a></p><p><img src=/img/20210421/theme-example.png alt="Screenshot of the example website"></p><p>Looks great! I had the option of copying the theme&rsquo;s files directly to my repository, or using a submodule. I went with the submodule:</p><div class=highlight><pre style=color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-shell data-lang=shell>$ git submodule add https://github.com/zhaohuabing/hugo-theme-cleanwhite.git themes/hugo-theme-cleanwhite
+created for the personal blog <a href=https://zhaohuabing.com>zhaohuabing.com</a></p><p><img src=/img/20210421/theme-example.png alt="Screenshot of the example website"></p><p>Looks great! I had the option of copying the theme&rsquo;s files directly to my repository, or using a submodule. I went with the submodule:</p><div class=highlight><pre style=color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-shell data-lang=shell>$ git submodule add https://github.com/zhaohuabing/hugo-theme-cleanwhite.git themes/hugo-theme-cleanwhite
 </code></pre></div><p>Referencing the <code>config.toml</code> from the theme&rsquo;s example site, I was able to
 create my own file:</p><div class=highlight><pre style=color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-toml data-lang=toml>baseURL = <span style=color:#f1fa8c>&#34;example.org&#34;</span>
 languageCode = <span style=color:#f1fa8c>&#34;en-us&#34;</span>
